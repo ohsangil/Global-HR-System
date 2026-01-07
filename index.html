@@ -1,34 +1,70 @@
-<div id="intro-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, #1a1a1a 0%, #000 100%); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 1.5s ease-out;">
+<div id="intro-gate" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 10000; display: flex; flex-direction: column; justify-content: center; align-items: center;">
     
-    <div id="logo-container" style="position: relative; width: 300px; height: 300px;">
-        <div style="position: absolute; width: 100%; height: 100%; border: 4px solid gold; border-radius: 50%; border-top-color: transparent; animation: spin 3s linear infinite;"></div>
-        
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-            <h1 style="color: gold; font-family: 'Georgia', serif; font-size: 4rem; margin: 0; letter-spacing: 10px; text-shadow: 0 0 20px gold;">WBPC</h1>
-            <p style="color: #fff; font-size: 0.8rem; letter-spacing: 5px; margin-top: 10px; opacity: 0.7;">GLOBAL COMMAND</p>
+    <div id="country-selector" style="margin-bottom: 60px; display: flex; gap: 30px;">
+        <div class="flag-btn" onclick="selectCountry('KOREA', this)" style="cursor: pointer; opacity: 0.5; transition: 0.3s; text-align: center;">
+            <div style="font-size: 4rem;">🇰🇷</div>
+            <p style="color: #fff; margin-top: 10px; font-weight: bold;">KOREA</p>
+        </div>
+        <div class="flag-btn" onclick="selectCountry('THAILAND', this)" style="cursor: pointer; opacity: 0.5; transition: 0.3s; text-align: center;">
+            <div style="font-size: 4rem;">🇹🇭</div>
+            <p style="color: #fff; margin-top: 10px; font-weight: bold;">THAILAND</p>
         </div>
     </div>
 
-    <div style="margin-top: 50px; text-align: center;">
-        <button onclick="enterCommandCenter()" style="background: none; border: 1px solid gold; color: gold; padding: 15px 40px; font-size: 1.2rem; cursor: pointer; letter-spacing: 5px; transition: 0.5s; overflow: hidden; position: relative;" onmouseover="this.style.background='gold'; this.style.color='#000';" onmouseout="this.style.background='none'; this.style.color='gold';">
-            ENTER SYSTEM
-        </button>
+    <div id="main-logo-trigger" onclick="handleEntry()" style="position: relative; width: 350px; height: 350px; cursor: not-allowed; filter: grayscale(100%); transition: 1s;">
+        <div id="logo-ring" style="position: absolute; width: 100%; height: 100%; border: 2px solid gold; border-radius: 50%; border-top-color: transparent; animation: none;"></div>
+        
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h1 style="color: gold; font-family: 'Georgia', serif; font-size: 4.5rem; margin: 0; letter-spacing: 12px; text-shadow: 0 0 30px rgba(212,175,55,0.5);">WBPC</h1>
+            <p id="entry-hint" style="color: #444; font-size: 0.7rem; letter-spacing: 3px; margin-top: 15px;">SELECT COUNTRY FIRST</p>
+        </div>
     </div>
 </div>
 
 <script>
-    function enterCommandCenter() {
-        const intro = document.getElementById('intro-overlay');
-        intro.style.opacity = '0';
+    let selectedRegion = "";
+
+    function selectCountry(region, element) {
+        selectedRegion = region;
+        
+        // 모든 깃발 투명도 초기화 후 선택된 것만 강조
+        document.querySelectorAll('.flag-btn').forEach(btn => btn.style.opacity = '0.3');
+        element.style.opacity = '1';
+
+        // 로고 활성화 (황금빛 주입)
+        const logo = document.getElementById('main-logo-trigger');
+        const ring = document.getElementById('logo-ring');
+        const hint = document.getElementById('entry-hint');
+
+        logo.style.cursor = "pointer";
+        logo.style.filter = "grayscale(0%)";
+        ring.style.animation = "spin 3s linear infinite";
+        hint.innerText = "CLICK LOGO TO START";
+        hint.style.color = "gold";
+        hint.style.fontWeight = "bold";
+    }
+
+    function handleEntry() {
+        if (!selectedRegion) {
+            alert("먼저 교육을 진행할 국가를 선택해 주십시오.");
+            return;
+        }
+        
+        // 입장 연출
+        const gate = document.getElementById('intro-gate');
+        gate.style.transition = "2s ease-in-out";
+        gate.style.background = "white"; // 화이트아웃 효과
+        gate.style.opacity = "0";
+        
         setTimeout(() => {
-            intro.style.display = 'none';
-        }, 1500);
+            gate.style.display = "none";
+            console.log(selectedRegion + " 섹터 교육장 진입 완료");
+            // 여기서 실제 교육장 페이지 로직 실행
+        }, 2000);
     }
 </script>
 
 <style>
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .flag-btn:hover { transform: scale(1.1); opacity: 0.8 !important; }
 </style>
