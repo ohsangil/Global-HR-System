@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WBPC GLOBAL HQ - 통합 지휘 센터</title>
+    <title>WBPC GLOBAL HQ</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; overflow: hidden; }
-        #entry-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 100; background: radial-gradient(circle, #1a1a1a 0%, #000 100%); transition: opacity 1s ease; }
-        .logo-circle { width: 150px; height: 150px; border: 4px solid #ffd700; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; box-shadow: 0 0 30px gold; margin-bottom: 30px; }
-        .enter-btn { padding: 15px 40px; border: 2px solid #ffd700; background: transparent; color: #ffd700; font-size: 1.2rem; cursor: pointer; letter-spacing: 5px; transition: 0.3s; }
-        .enter-btn:hover { background: #ffd700; color: #000; box-shadow: 0 0 20px gold; }
-        #main-hq { display: none; height: 100vh; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hq-box { border: 5px double #ffd700; padding: 50px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
-        h1 { font-size: 3rem; letter-spacing: 12px; margin: 0; }
-        .status { margin-top: 30px; color: #00ff00; font-family: monospace; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; overflow: hidden; }
+        
+        /* 로비 화면 */
+        #entry-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; background: #000; transition: all 0.8s ease; }
+        .logo-circle { width: 120px; height: 120px; border: 3px solid #ffd700; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; font-weight: bold; box-shadow: 0 0 20px gold; margin-bottom: 20px; }
+        .enter-btn { padding: 12px 35px; border: 2px solid #ffd700; background: transparent; color: #ffd700; font-size: 1.1rem; cursor: pointer; letter-spacing: 4px; z-index: 1001; }
+        .enter-btn:hover { background: #ffd700; color: #000; box-shadow: 0 0 15px gold; }
+
+        /* 지휘소 내부 */
+        #main-hq { width: 100%; height: 100vh; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, #1a1a1a 0%, #000 100%); }
+        .hq-box { border: 4px double #ffd700; padding: 40px; box-shadow: 0 0 25px rgba(255, 215, 0, 0.2); }
+        h1 { font-size: 2.8rem; letter-spacing: 10px; margin-bottom: 15px; }
+        .status { margin-top: 25px; color: #00ff00; font-family: monospace; font-size: 0.9rem; line-height: 1.6; }
     </style>
 </head>
 <body>
+
     <div id="entry-screen">
         <div class="logo-circle">WBPC</div>
-        <h2 style="letter-spacing: 8px;">GLOBAL COMMAND CENTER</h2>
-        <button class="enter-btn" onclick="enterHQ()">SYSTEM ENTER</button>
+        <h2 style="letter-spacing: 5px; margin-bottom: 30px;">GLOBAL COMMAND CENTER</h2>
+        <button class="enter-btn" onclick="openGate()">SYSTEM ENTER</button>
     </div>
+
     <div id="main-hq">
         <div class="hq-box">
             <h1>WBPC GLOBAL HQ</h1>
-            <p style="color: #fff; letter-spacing: 3px;">본사 통합 전략 지휘소 가동 중</p>
-            <div class="status">> CONNECTION: SECURE<br>> WELCOME, COMMANDER.</div>
+            <p style="color: #fff; letter-spacing: 2px;">본사 통합 전략 지휘소 가동 중</p>
+            <div class="status">> CONNECTION: ENCRYPTED<br>> COMMANDER: AUTHENTICATED<br>> WELCOME TO THE CENTER.</div>
         </div>
     </div>
+
     <script>
-        function enterHQ() {
-            document.getElementById('entry-screen').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('entry-screen').style.display = 'none';
-                document.getElementById('main-hq').style.display = 'flex';
-            }, 1000);
+        function openGate() {
+            // 강제로 로비를 숨기고 지휘소를 보여주는 스위치
+            document.getElementById('entry-screen').style.display = 'none';
+            document.getElementById('main-hq').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
