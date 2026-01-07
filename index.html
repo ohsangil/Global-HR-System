@@ -1,51 +1,62 @@
-<div id="graduation-ceremony" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 20000; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<div id="commander-dashboard" style="width: 100%; min-height: 100vh; background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; padding: 30px;">
     
-    <div id="certificate-glass" style="width: 700px; padding: 60px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 2px solid gold; border-radius: 40px; text-align: center; box-shadow: 0 0 100px rgba(212, 175, 55, 0.4); transform: scale(0.8); opacity: 0; transition: 2s;">
-        
-        <div style="margin-bottom: 30px;">
-            <img src="https://img.icons8.com/color/96/000000/medal-first-place.png" style="width: 80px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid gold; padding-bottom: 20px; margin-bottom: 30px;">
+        <div>
+            <h1 style="color: gold; margin: 0; letter-spacing: 5px;">WBPC GLOBAL COMMAND</h1>
+            <p style="color: #888; margin: 5px 0 0 0;">2026-01-07 22:15:52 | 사령관님, 현재 시스템이 정상 가동 중입니다.</p>
         </div>
-        
-        <h1 style="color: gold; letter-spacing: 10px; font-size: 2.5rem; margin-bottom: 10px;">CERTIFICATE OF COMPLETION</h1>
-        <p style="color: #fff; font-size: 1.1rem; letter-spacing: 3px;">WBPC 정예 요원 인증서</p>
-        
-        <hr style="border: 0.5px solid rgba(212,175,55,0.3); margin: 40px 0;">
-        
-        <div style="font-size: 1.2rem; line-height: 2; color: #eee;">
-            <p>성명: <span style="color: gold; font-weight: bold;">KIM CHUL-SU</span></p>
-            <p>귀하는 30일간의 엄격한 WBPC 교육 공정을 성실히 이수하였으며,<br> AI 엘레나의 모든 검증을 통과하였기에 이 증서를 수여합니다.</p>
-        </div>
-
-        <div style="margin-top: 50px; font-family: 'serif'; font-style: italic; color: gold; font-size: 1.5rem;">
-            COMMANDER IN CHIEF: WBPC
+        <div style="text-align: right; background: rgba(212,175,55,0.1); padding: 15px 30px; border-radius: 10px; border: 1px solid gold;">
+            <span style="color: gold; font-size: 0.8rem;">TOTAL ACTIVE WORKERS</span>
+            <div style="font-size: 1.8rem; font-weight: bold;">1,422 명</div>
         </div>
     </div>
 
-    <div id="premium-unlock-area" style="margin-top: 50px; opacity: 0; transition: 3s;">
-        <button onclick="enterPremiumSector()" style="padding: 20px 80px; background: gold; color: #000; font-weight: bold; border: none; border-radius: 50px; font-size: 1.5rem; cursor: pointer; box-shadow: 0 0 30px gold;">
-            PREMIUM SECTOR UNLOCKED
-        </button>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 25px;">
+        
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; border-radius: 20px; padding: 25px;">
+            <h3 style="color: #00c3ff; border-left: 4px solid #00c3ff; padding-left: 10px;">명단 대조 및 승인 현황</h3>
+            <div style="margin-top: 20px;">
+                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222;">
+                    <span>🇰🇷 김철수 (태국 송출)</span>
+                    <span style="color: #0f0;">[승인완료]</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222;">
+                    <span>🇹🇭 Somchai (베트남 송출)</span>
+                    <span style="color: #ff4444;">[서류미비]</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #555; margin-top: 15px;">* 엘레나가 송출업체 사진과 99% 매칭 확인</p>
+            </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid #ff4444; border-radius: 20px; padding: 25px;">
+            <h3 style="color: #ff4444; border-left: 4px solid #ff4444; padding-left: 10px;">보안 및 위치 감시</h3>
+            <div style="height: 150px; background: #000; margin-top: 20px; border-radius: 10px; display: flex; justify-content: center; align-items: center; color: #444;">
+                [ WORLD MAP GPS TRACKING ]
+            </div>
+            <div style="margin-top: 15px; font-size: 0.85rem; color: #aaa;">
+                <p>● 유심 교체 후 번호 자동 갱신: 12건</p>
+                <p>● 비인가 지역 접속 시도: <span style="color: #ff4444;">0건</span></p>
+            </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid gold; border-radius: 20px; padding: 25px;">
+            <h3 style="color: gold; border-left: 4px solid gold; padding-left: 10px;">140분 교육 집중도</h3>
+            <div style="margin-top: 20px;">
+                <p style="font-size: 0.9rem;">현재 실시간 스트라이크 발생</p>
+                <div style="background: rgba(255, 68, 68, 0.1); padding: 10px; border-radius: 5px; color: #ff4444; font-size: 0.8rem;">
+                    경고: 이영희(근로자) - 시선 이탈 8초 경과
+                </div>
+                <div style="margin-top: 20px;">
+                    <span style="font-size: 0.8rem; color: #888;">오늘의 완수 인원:</span>
+                    <span style="font-size: 1.2rem; color: gold; font-weight: bold; margin-left: 10px;">892명</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: #ccc;">전자 서약서(NDA) 및 민·형사 책임 확약서 보관소 (총 12,401건)</span>
+        <button style="background: gold; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">서류 열람하기</button>
     </div>
 </div>
-
-<script>
-    // 수료식 시작 애니메이션
-    window.onload = function() {
-        const cert = document.getElementById('certificate-glass');
-        const unlock = document.getElementById('premium-unlock-area');
-        
-        setTimeout(() => {
-            cert.style.opacity = '1';
-            cert.style.transform = 'scale(1)';
-        }, 500);
-
-        setTimeout(() => {
-            unlock.style.opacity = '1';
-        }, 3000);
-    };
-
-    function enterPremiumSector() {
-        alert("사령관님, 이제 이 수강생은 모든 권한을 획득했습니다. 프리미엄 라운지로 이동합니다!");
-        // 프리미엄 컨텐츠 페이지로 이동
-    }
-</script>
