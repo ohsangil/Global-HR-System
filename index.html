@@ -1,47 +1,36 @@
-<div id="registration-step-2" style="background: rgba(15, 0, 0, 0.96); border: 2px solid #ff4444; padding: 50px; border-radius: 30px; box-shadow: 0 0 60px rgba(255, 68, 68, 0.3); color: #fff;">
+<div id="registration-step-3" style="background: rgba(10, 20, 40, 0.98); border: 2px solid gold; padding: 50px; border-radius: 30px; box-shadow: 0 0 50px rgba(212, 175, 55, 0.3); color: #fff;">
     
     <div style="text-align: center; margin-bottom: 35px;">
-        <span style="color: #ff4444; font-weight: bold; border: 1px solid #ff4444; padding: 5px 15px; font-size: 0.8rem; letter-spacing: 2px;">PROTOCOL 02: LEGAL LIABILITY</span>
-        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">비밀유지 및 민·형사 책임 서약서</h2>
+        <span style="color: gold; font-weight: bold; border: 1px solid gold; padding: 5px 15px; font-size: 0.8rem; letter-spacing: 2px;">PROTOCOL 03: FINAL AUTHORIZATION</span>
+        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">행정 서류 귀속 확인 및 최종 서명</h2>
     </div>
 
-    <div id="nda-scroll-box" style="height: 350px; overflow-y: scroll; background: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 15px; text-align: left; line-height: 2; border: 1px solid #441111; color: #eee;">
-        <h4 style="color: #ff4444;">[ 제1조: 영업비밀의 보호 ]</h4>
-        <p>본인은 WBPC의 한글 교육 공정, 직무 노하우, 지휘 시스템 및 모든 내부 정보를 회사의 핵심 영업비밀로 인정하며, 이를 사령관의 승인 없이 외부(SNS, 커뮤니티, 타 업체 등)로 유출하지 않는다.</p>
-
-        <h4 style="color: #ff4444; margin-top: 25px;">[ 제2조: 민·형사상 법적 책임 ]</h4>
-        <p>상기 비밀 유지 의무를 위반할 경우, 본인은 다음과 같은 처벌을 감수할 것을 확약한다:</p>
-        <ul style="list-style: square; padding-left: 20px;">
-            <li><b>민사상 책임:</b> 유출로 인한 회사의 유·무형적 손해 전액에 대한 <b>징벌적 손해배상</b> 및 모든 법적 비용 부담.</li>
-            <li><b>형사상 책임:</b> 부정경쟁방지 및 영업비밀보호에 관한 법률 위반으로 인한 <b>즉각적인 형사 고발 및 처벌.</b></li>
-        </ul>
-
-        <h4 style="color: #ff4444; margin-top: 25px;">[ 제3조: 무관용 원칙 ]</h4>
-        <p>보안 사고 발생 시 본인은 별도의 소명 절차 없이 즉시 자격이 박탈되며, 영구 제명 조치됨에 이의를 제기하지 않는다.</p>
+    <div style="background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 15px; text-align: left; line-height: 1.9; border: 1px solid #333; margin-bottom: 30px;">
+        <h4 style="color: gold;">[ 행정 서류 제출 및 대조 확인 ]</h4>
+        <p style="color: #ccc; font-size: 0.95rem;">
+            - 본인은 **현지 국가 송출업체(사무실)**에 제출한 여권, 신원 명단 사진, 기본 인적 사항이 WBPC 지휘본부 시스템에 안전하게 이관되었음을 확인한다.<br>
+            - 본인은 위 서류들이 본인 확인 및 법적 증거 자료로 활용됨에 무조건적으로 승낙하며, 추가로 요구되는 행정 기록에 성실히 임할 것을 확약한다.
+        </p>
     </div>
 
-    <div style="margin-top: 30px; text-align: left;">
-        <label style="display: flex; align-items: center; cursor: pointer; font-size: 1.1rem; color: #ff4444; font-weight: bold;">
-            <input type="checkbox" id="legal-confirm-check" style="transform: scale(1.6); margin-right: 15px;"> 
-            본인은 위 민·형사상 모든 법적 책임을 충분히 숙지하였으며 준수할 것을 서약합니다.
-        </label>
-    </div>
+    <div style="text-align: center;">
+        <p style="color: #fff; font-size: 1.1rem; margin-bottom: 15px;">위 모든 사항(1~3단계)을 승인하며 최종 서명합니다.</p>
+        
+        <div style="background: #fff; height: 180px; border-radius: 15px; position: relative; margin-bottom: 30px;">
+            <canvas id="final-signature-canvas" style="width: 100%; height: 100%; cursor: crosshair;"></canvas>
+            <p style="position: absolute; bottom: 10px; right: 20px; color: #aaa; font-size: 0.8rem;">(서명) SIGNATURE</p>
+        </div>
 
-    <div style="margin-top: 40px;">
-        <button onclick="submitLegalOath()" style="width: 100%; padding: 25px; background: #ff4444; color: #fff; font-weight: bold; border: none; border-radius: 15px; cursor: pointer; font-size: 1.2rem; transition: 0.3s; text-shadow: 0 0 10px rgba(0,0,0,0.5);">
-            법적 책임 확약 및 다음 단계 이동
+        <button onclick="completeRegistration()" style="width: 100%; padding: 25px; background: gold; color: #000; font-weight: bold; font-size: 1.3rem; border: none; border-radius: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+            서류 제출 및 WBPC 가입 완료
         </button>
     </div>
 </div>
 
 <script>
-    function submitLegalOath() {
-        const checked = document.getElementById('legal-confirm-check').checked;
-        if (!checked) {
-            alert("법적 책임 조항에 동의하셔야만 다음 단계로 진행할 수 있습니다.");
-            return;
-        }
-        alert("사령관님, 서약자의 민·형사 책임 확약이 접수되었습니다. 보안 등급이 갱신됩니다.");
-        // 3단계(행정 서류 고지)로 이동
+    function completeRegistration() {
+        // 서명 데이터 추출 및 서버 전송 로직 시뮬레이션
+        alert("사령관님! 최종 서약서와 서류가 접수되었습니다. 이제 엘레나가 정식 회원으로 승인합니다.");
+        // 로그인 상태로 전환 및 라운지 입장
     }
 </script>
