@@ -1,39 +1,26 @@
-<div id="exam-control-center" style="width: 100%; background: rgba(20,0,0,0.3); border: 2px solid #ff4444; border-radius: 25px; padding: 40px; box-shadow: 0 0 50px rgba(255,0,0,0.1);">
+<div id="commander-stats-panel" style="width: 100%; background: #000; border-top: 2px solid gold; padding: 30px; margin-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
     
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ff4444; padding-bottom: 20px; margin-bottom: 30px;">
-        <div>
-            <h2 style="color: #ff4444; letter-spacing: 5px; margin: 0;">FINAL TEST MODE</h2>
-            <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">DAY 01: 한글 기초 평가</p>
-        </div>
-        <div style="text-align: right;">
-            <div id="exam-timer" style="font-size: 2.5rem; color: #fff; font-family: monospace; font-weight: bold;">20:00</div>
-            <span style="color: #ff4444; font-size: 0.8rem;">※ 화면 이탈 시 즉시 실격 처리</span>
-        </div>
+    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #0f0;">
+        <div style="color: #888; font-size: 0.8rem;">LIVE STUDENTS</div>
+        <div style="font-size: 2rem; font-weight: bold; color: #fff;">1,422 <span style="font-size: 1rem; color: #0f0;">ON</span></div>
     </div>
 
-    <div id="exam-paper" style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; text-align: left;">
-        <h3 style="color: gold; margin-bottom: 30px;">Q1. 다음 중 'Ga' 라고 발음하는 글자를 선택하시오.</h3>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <button class="exam-option" onclick="selectAns(1)">1) 나 (Na)</button>
-            <button class="exam-option" onclick="selectAns(2)">2) 가 (Ga)</button>
-            <button class="exam-option" onclick="selectAns(3)">3) 다 (Da)</button>
-            <button class="exam-option" onclick="selectAns(4)">4) 라 (Ra)</button>
-        </div>
+    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid gold;">
+        <div style="color: #888; font-size: 0.8rem;">ATTENTION RATE</div>
+        <div style="font-size: 2rem; font-weight: bold; color: gold;">94.8%</div>
     </div>
 
-    <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; display: flex; justify-content: space-around;">
-        <div class="monitor-stat">제출 인원: <span style="color: gold;">12 / 42</span></div>
-        <div class="monitor-stat">평균 점수: <span style="color: #0f0;">88점</span></div>
-        <div class="monitor-stat">부정 의심: <span style="color: red;">0</span></div>
+    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid red;">
+        <div style="color: #888; font-size: 0.8rem;">STRIKE ALERTS</div>
+        <div style="font-size: 2rem; font-weight: bold; color: red;">12 <span style="font-size: 1rem;">CASES</span></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #00c3ff;">
+        <div style="color: #888; font-size: 0.8rem;">EXAM PASS EST.</div>
+        <div style="font-size: 2rem; font-weight: bold; color: #00c3ff;">87.2%</div>
     </div>
 </div>
 
-<style>
-    .exam-option { 
-        padding: 20px; background: rgba(255,255,255,0.1); border: 1px solid #444; color: #fff; 
-        font-size: 1.2rem; cursor: pointer; border-radius: 10px; transition: 0.3s; text-align: left;
-    }
-    .exam-option:hover { background: rgba(212,175,55,0.2); border-color: gold; }
-    .monitor-stat { color: #888; font-size: 0.9rem; }
-</style>
+<div style="margin-top: 20px; padding: 15px; background: rgba(212, 175, 55, 0.1); border: 1px solid gold; border-radius: 10px; font-family: monospace; font-size: 0.8rem; color: gold;">
+    [SYSTEM MESSAGE] 모든 섹터가 사령관님의 20/10, 20/10, 20/10, 20/10, 20 프로토콜에 따라 정상 작동 중입니다.
+</div>
