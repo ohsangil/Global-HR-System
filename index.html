@@ -1,23 +1,47 @@
-<div id="final-administration" style="width: 100%; max-width: 900px; margin: 40px auto; background: rgba(10, 20, 40, 0.98); border: 2px solid #00f0ff; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(0, 240, 255, 0.2);">
+<div id="worker-main-lounge" style="width: 100%; min-height: 100vh; background: radial-gradient(circle at top, #0a0f1a 0%, #000 100%); color: #fff; padding: 40px; font-family: 'Pretendard', sans-serif;">
     
-    <div style="text-align: center; margin-bottom: 40px;">
-        <span style="color: #00f0ff; font-weight: bold; border: 1px solid #00f0ff; padding: 5px 20px; border-radius: 5px; letter-spacing: 3px;">FINAL AUTHORIZATION</span>
-        <h1 style="color: #fff; letter-spacing: 8px; font-size: 2.2rem; margin-top: 20px;">행정 서류 귀속 및 위치확인 승낙</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 195, 255, 0.3); padding-bottom: 20px; margin-bottom: 40px;">
+        <div>
+            <h4 style="color: #00c3ff; margin: 0; letter-spacing: 2px;">WBPC VERIFIED WORKER</h4>
+            <h1 style="margin: 10px 0 0 0; font-size: 2.2rem;">Welcome, <span style="text-shadow: 0 0 15px #00c3ff;">KIM CHUL-SU</span> 요원</h1>
+        </div>
+        <div style="text-align: right;">
+            <div style="display: inline-block; padding: 8px 15px; background: rgba(0, 255, 0, 0.1); border: 1px solid #0f0; border-radius: 20px; color: #0f0; font-size: 0.8rem; font-weight: bold; animation: pulse 2s infinite;">
+                ● 실시간 위치확인 가동 중
+            </div>
+            <p style="margin-top: 10px; font-size: 0.8rem; color: #888;">지급 유심 번호: 010-XXXX-5582</p>
+        </div>
     </div>
 
-    <div style="background: rgba(0, 195, 255, 0.05); padding: 35px; border-radius: 20px; border: 1px solid #1e3a5f; margin-bottom: 40px; text-align: left; line-height: 1.9;">
-        <h4 style="color: #00f0ff; margin-bottom: 20px;">[ 최종 확인 사항 ]</h4>
-        <p style="color: #ccc; font-size: 1rem;">
-            1. 본인은 현지 송출 사무실에 제출한 <b>여권 및 신원 서류</b> 일체가 WBPC 본부 시스템으로 이관되어 관리됨을 확인한다.<br><br>
-            2. 대한민국 입국 즉시 사무실에서 지급하는 <b>보급 유심</b>을 장착해야 하며, 해당 번호를 통한 <b>실시간 위치확인</b>에 무조건 승낙한다.<br><br>
-            3. 번호 변경 시에도 시스템은 단말기 식별 번호를 통해 본인을 추적하며, 이에 대한 <b>위치확인 승낙 효력은 자동으로 승계</b>됨을 확약한다.
-        </p>
-    </div>
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px;">
+        
+        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid #333; border-radius: 25px; padding: 40px; text-align: center;">
+            <p style="color: #888; margin-bottom: 20px;">총 30일 공정 이수율</p>
+            <div style="position: relative; width: 180px; height: 180px; margin: 0 auto;">
+                <div style="width: 100%; height: 100%; border-radius: 50%; border: 10px solid #1a1a1a; border-top: 10px solid gold; display: flex; justify-content: center; align-items: center;">
+                    <span style="font-size: 2.5rem; font-weight: bold; color: gold;">3%</span>
+                </div>
+            </div>
+            <p style="margin-top: 25px; color: #555; font-size: 0.9rem;">1일차 교육 진행 중 (40/140분)</p>
+        </div>
 
-    <div style="text-align: center;">
-        <p style="color: #888; margin-bottom: 20px;">"나는 WBPC의 모든 규정을 준수하며 정식 요원으로 등록할 것을 요청합니다."</p>
-        <button onclick="completeOnboarding()" style="width: 100%; padding: 30px; background: linear-gradient(90deg, #00c3ff, #0080ff); color: #fff; font-weight: bold; font-size: 1.5rem; border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 10px 40px rgba(0, 195, 255, 0.4);">
-            최종 승인 및 WBPC 라운지 입장
-        </button>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div onclick="goToClass()" style="background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%); border: 1px solid #00c3ff; border-radius: 20px; padding: 35px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="position: relative; z-index: 2;">
+                    <h2 style="margin: 0; color: #fff;">01. 한글 기초 및 현장 실무</h2>
+                    <p style="margin: 10px 0 0 0; color: #00c3ff;">[AI 엘레나 감찰 모드 가동]</p>
+                    <div style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">남은 시간: 100분</div>
+                </div>
+                <div style="position: absolute; right: -20px; bottom: -20px; font-size: 8rem; opacity: 0.1; color: #fff;">🇰🇷</div>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.5); border: 1px solid #222; border-radius: 20px; padding: 35px; opacity: 0.5; cursor: not-allowed; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="margin: 0; color: #444;">02. 프리미엄 직무 심화</h2>
+                    <p style="margin: 10px 0 0 0; color: #333;">기초 공정 완료 후 잠금 해제됩니다.</p>
+                </div>
+                <div style="font-size: 2rem;">🔒</div>
+            </div>
+        </div>
     </div>
 </div>
