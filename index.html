@@ -6,56 +6,44 @@
     <title>WBPC GLOBAL HR - 전략 지휘 센터</title>
     <style>
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; overflow: hidden; }
-        
-        #entry-screen { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            z-index: 1000; background: radial-gradient(circle, #222 0%, #000 100%); transition: 0.8s; 
-        }
+        #entry-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; background: radial-gradient(circle, #222 0%, #000 100%); transition: 0.8s; }
 
-        /* 1. 럭셔리 3D 골드 로고 박스 (실제 이미지 삽입용) */
+        /* 럭셔리 3D 골드 로고 박스 - 실제 이미지 삽입 최적화 */
         .gold-logo-box { 
             width: 170px; height: 170px; border-radius: 50%; 
             background: linear-gradient(145deg, #d4af37, #8a6d3b); 
             border: 8px solid #ffd700; display: flex; justify-content: center; align-items: center; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.9), inset 0 0 25px #fff; margin-bottom: 25px; 
-            padding: 10px; overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9), inset 0 0 25px #fff; margin-bottom: 25px; padding: 10px; overflow: hidden; 
         }
         .gold-logo-box img { max-width: 85%; max-height: 85%; object-fit: contain; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5)); }
 
         h2 { letter-spacing: 8px; font-weight: 300; margin-bottom: 40px; text-shadow: 0 0 15px gold; font-size: 1.5rem; }
 
-        /* 2. 4개국 3D 국가 버튼 */
+        /* 3D 국가 버튼 세트 */
         .country-selector { display: flex; gap: 30px; margin-bottom: 50px; }
         .btn-3d { 
-            width: 125px; height: 90px; border: none; border-radius: 15px; 
+            width: 125px; height: 95px; border: none; border-radius: 15px; 
             background: linear-gradient(145deg, #333, #0a0a0a); 
             box-shadow: 10px 10px 20px #000, -4px -4px 12px #444; 
-            cursor: pointer; display: flex; justify-content: center; align-items: center; 
-            transition: 0.4s; position: relative;
+            cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s; 
         }
-        .btn-3d .flag { font-size: 3.8rem; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8)); }
-        .btn-3d::after { content: attr(data-name); position: absolute; bottom: -35px; font-size: 0.9rem; color: #666; letter-spacing: 2px; }
-        .btn-3d:hover { transform: translateY(-10px); box-shadow: 0 0 35px gold; }
-        .btn-3d.selected { border: 3px solid #ffd700; background: #1a1a1a; box-shadow: 0 0 40px #ffd700, inset 0 0 20px gold; transform: scale(1.1); }
+        .btn-3d .flag-text { font-size: 2.2rem; font-weight: bold; color: #000; margin-bottom: 5px; text-shadow: 0 0 5px rgba(255,215,0,0.5); }
+        .btn-3d .country-label { font-size: 0.85rem; color: #888; letter-spacing: 1px; }
+        .btn-3d.selected { border: 3px solid #ffd700; background: #1a1a1a; box-shadow: 0 0 45px #ffd700, inset 0 0 15px gold; transform: scale(1.1); }
+        .btn-3d.selected .country-label { color: #ffd700; font-weight: bold; }
 
-        /* 3. 웅장한 3D 입장 버튼 (완벽 변환) */
+        /* 웅장한 3D 입장 버튼 */
         .enter-btn-3d { 
-            padding: 22px 100px; font-size: 1.5rem; font-weight: bold; letter-spacing: 10px; 
+            padding: 22px 100px; font-size: 1.6rem; font-weight: bold; letter-spacing: 10px; 
             color: #444; border: none; border-radius: 50px; 
-            background: linear-gradient(145deg, #222, #000); 
-            box-shadow: 10px 10px 25px #000, -3px -3px 15px #333;
-            cursor: not-allowed; transition: 0.5s;
+            background: linear-gradient(145deg, #222, #000); box-shadow: 10px 10px 30px #000, -3px -3px 10px #333; cursor: not-allowed; transition: 0.5s; 
         }
-        .enter-btn-3d.ready { 
-            color: #ffd700; border: 2px solid #ffd700; cursor: pointer;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 10px 10px 25px #000;
-        }
-        .enter-btn-3d.ready:hover { background: #ffd700; color: #000; box-shadow: 0 0 50px #ffd700; transform: scale(1.05); }
+        .enter-btn-3d.ready { color: #ffd700; border: 2.5px solid #ffd700; cursor: pointer; box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), 10px 10px 30px #000; }
+        .enter-btn-3d.ready:hover { background: #ffd700; color: #000; box-shadow: 0 0 60px #ffd700; transform: scale(1.05); }
 
-        /* 내부 지휘소 */
+        /* 지휘소 내부 */
         #main-hr { width: 100%; height: 100vh; display: none; flex-direction: column; justify-content: center; align-items: center; background: #000; }
-        .hr-box { border: 10px double #ffd700; padding: 60px; box-shadow: 0 0 60px gold; text-align: center; }
+        .hr-box { border: 12px double #ffd700; padding: 70px; box-shadow: 0 0 70px gold; text-align: center; }
     </style>
 </head>
 <body>
@@ -65,17 +53,17 @@
         </div>
         <h2 id="top-title">접속할 국가 섹터를 선택하십시오</h2>
         <div class="country-selector">
-            <button class="btn-3d" data-name="대한민국" onclick="selectCountry(this, '대한민국')"><span class="flag">🇰🇷</span></button>
-            <button class="btn-3d" data-name="태국" onclick="selectCountry(this, '태국')"><span class="flag">🇹🇭</span></button>
-            <button class="btn-3d" data-name="라오스" onclick="selectCountry(this, '라오스')"><span class="flag">🇱🇦</span></button>
-            <button class="btn-3d" data-name="미얀마" onclick="selectCountry(this, '미얀마')"><span class="flag">🇲🇲</span></button>
+            <button class="btn-3d" onclick="selectCountry(this, '대한민국')"><span class="flag-text">KR</span><span class="country-label">대한민국</span></button>
+            <button class="btn-3d" onclick="selectCountry(this, '태국')"><span class="flag-text">TH</span><span class="country-label">태국</span></button>
+            <button class="btn-3d" onclick="selectCountry(this, '라오스')"><span class="flag-text">LA</span><span class="country-label">라오스</span></button>
+            <button class="btn-3d" onclick="selectCountry(this, '미얀마')"><span class="flag-text">MM</span><span class="country-label">미얀마</span></button>
         </div>
         <button id="enter-button" class="enter-btn-3d" onclick="openGate()">SYSTEM ENTER</button>
     </div>
     <div id="main-hr">
         <div class="hr-box">
-            <h1 style="font-size: 3.5rem; letter-spacing: 15px; color: #ffd700;">WBPC GLOBAL HR</h1>
-            <p id="sector-info" style="color: #fff; letter-spacing: 5px; font-size: 2rem; margin-top: 20px;"></p>
+            <h1 style="font-size: 3.8rem; letter-spacing: 18px; color: #ffd700; text-shadow: 0 0 20px gold;">WBPC GLOBAL HR</h1>
+            <p id="sector-info" style="color: #fff; letter-spacing: 6px; font-size: 2.2rem; margin-top: 25px;"></p>
         </div>
     </div>
     <script>
@@ -86,15 +74,13 @@
             selectedSector = country;
             document.getElementById('enter-button').classList.add('ready');
             document.getElementById('top-title').innerText = country + " 섹터 활성화됨";
+            document.getElementById('top-title').style.color = "#ffd700";
         }
         function openGate() {
             if(!selectedSector) return;
             document.getElementById('entry-screen').style.opacity = '0';
             document.getElementById('sector-info').innerText = selectedSector + " STRATEGIC COMMAND";
-            setTimeout(() => {
-                document.getElementById('entry-screen').style.display = 'none';
-                document.getElementById('main-hr').style.display = 'flex';
-            }, 800);
+            setTimeout(() => { document.getElementById('entry-screen').style.display = 'none'; document.getElementById('main-hr').style.display = 'flex'; }, 800);
         }
     </script>
 </body>
