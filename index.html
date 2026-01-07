@@ -1,24 +1,26 @@
-<div id="entrance-gate" style="width: 100%; max-width: 900px; margin: 40px auto; background: rgba(5, 10, 20, 0.95); border: 2px solid gold; border-radius: 40px; padding: 60px; color: #fff; text-align: center; box-shadow: 0 0 80px rgba(212, 175, 55, 0.3);">
+<div id="nda-sector" style="width: 100%; max-width: 900px; margin: 40px auto; background: rgba(10, 0, 0, 0.98); border: 2px solid #ff4444; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(255, 68, 68, 0.2);">
     
-    <div style="margin-bottom: 40px;">
-        <h1 style="color: gold; letter-spacing: 15px; font-size: 2.5rem; margin-bottom: 10px;">WBPC ENTER</h1>
-        <p style="color: #666; letter-spacing: 5px;">GLOBAL COMMAND CENTER</p>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <span style="color: #ff4444; font-weight: bold; border: 1px solid #ff4444; padding: 5px 20px; border-radius: 5px; letter-spacing: 3px;">TOP SECRET</span>
+        <h1 style="color: #fff; letter-spacing: 8px; font-size: 2.2rem; margin-top: 20px;">비밀유지 및 법적 책임 서약</h1>
     </div>
 
-    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid #333; margin-bottom: 40px; text-align: left;">
-        <p style="color: gold; font-weight: bold; margin-bottom: 15px;">[ AI 엘레나의 안내 ]</p>
-        <p style="color: #ccc; font-size: 0.95rem; line-height: 1.8;">
-            "반갑습니다. WBPC 지휘본부에 오신 것을 환영합니다.<br>
-            귀하의 안전한 입국과 성실한 교육 이수를 위해 **실시간 위치확인**을 가동합니다.<br>
-            또한, 사무실에서 보급한 유심으로 변경 시 번호는 자동으로 갱신됩니다."
-        </p>
+    <div style="background: rgba(0,0,0,0.7); padding: 30px; border-radius: 20px; border: 1px solid #333; height: 300px; overflow-y: scroll; text-align: left; line-height: 2; color: #ddd; margin-bottom: 30px;">
+        <p style="color: #ff4444; font-weight: bold; font-size: 1.1rem;">[ 민·형사상 책임에 관한 확약 ]</p>
+        1. 본인은 WBPC의 모든 교육 내용과 내부 기밀을 사령관의 승인 없이 유출할 경우, **부정경쟁방지법**에 의거하여 즉각적인 **형사 처벌**을 감수한다.<br><br>
+        2. 기밀 유출로 인한 회사의 손실에 대해 본인은 **징벌적 민사 손해배상** 책임을 지며, 본인의 모든 자산에 대한 가압류 조치에 이의를 제기하지 않는다.<br><br>
+        3. 본인은 한국 입국 후 **위치확인** 및 **보급 유심 사용 규정**을 위반할 경우 즉시 자격이 박탈됨을 확인한다.<br><br>
+        <p style="text-align: center; color: #ff4444; font-weight: bold; margin-top: 20px;">"나는 위 모든 법적 책임을 충분히 숙지하였으며 준수할 것을 서약한다."</p>
     </div>
 
     <div style="margin-bottom: 30px;">
-        <button onclick="step2()" style="width: 100%; padding: 25px; background: gold; color: #000; font-weight: bold; font-size: 1.3rem; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
-            위치확인 승낙 및 입장 시작
-        </button>
+        <div style="background: #fff; height: 150px; border-radius: 15px; position: relative;">
+            <canvas id="sign-pad" style="width: 100%; height: 100%; cursor: crosshair;"></canvas>
+            <p style="position: absolute; bottom: 10px; right: 20px; color: #999; font-size: 0.8rem;">서명 (SIGNATURE)</p>
+        </div>
     </div>
 
-    <p style="color: #444; font-size: 0.8rem;">※ 본 화면은 사령관님의 명단 데이터와 실시간 연동 중입니다.</p>
+    <button onclick="step3()" style="width: 100%; padding: 25px; background: #ff4444; color: #fff; font-weight: bold; font-size: 1.3rem; border: none; border-radius: 15px; cursor: pointer;">
+        법적 책임 확약 및 최종 제출
+    </button>
 </div>
