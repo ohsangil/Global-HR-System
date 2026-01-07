@@ -1,37 +1,40 @@
-<div id="registration-step-3" style="display: none; background: rgba(5, 15, 30, 0.95); border: 2px solid #00c3ff; padding: 50px; border-radius: 30px; box-shadow: 0 0 50px rgba(0, 195, 255, 0.2);">
+<div id="registration-step-1" style="background: rgba(5, 15, 30, 0.98); border: 2px solid #00c3ff; padding: 50px; border-radius: 30px; box-shadow: 0 0 50px rgba(0, 195, 255, 0.3); color: #fff;">
     
     <div style="text-align: center; margin-bottom: 35px;">
-        <span style="color: #00c3ff; font-weight: bold; border: 1px solid #00c3ff; padding: 5px 15px; font-size: 0.8rem;">ADMINISTRATIVE & TRACKING</span>
-        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">위치 및 행정 정보 활용 동의</h2>
+        <span style="color: #00c3ff; font-weight: bold; border: 1px solid #00c3ff; padding: 5px 15px; font-size: 0.8rem;">PROTOCOL 01: REAL-TIME TRACKING</span>
+        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">위치 파악 및 통신 자동 승계 동의</h2>
     </div>
 
-    <div style="background: rgba(255, 255, 255, 0.02); padding: 30px; border-radius: 15px; text-align: left; line-height: 1.9; border: 1px solid #1e3a5f;">
-        <h4 style="color: #00c3ff;">[ 위치 정보 기반 부정 접속 차단 ]</h4>
-        <p style="color: #ccc; font-size: 0.95rem;">
-            본 시스템은 보안 정책에 따라 **실시간 GPS 위치**를 확인합니다. 허가된 국가 및 지역을 벗어난 접속 시도는 즉시 차단되며, 사령관 지휘소에 경고 알림이 전송됩니다.
-        </p>
-
-        <h4 style="color: #00c3ff; margin-top: 25px;">[ 송출업체 제출 서류 대조 ]</h4>
-        <p style="color: #ccc; font-size: 0.95rem;">
-            귀하가 **현지 국가 송출업체(사무실)**에 제출한 여권 사본, 신원 명단 사진, 기본 인적 사항은 본 시스템의 데이터베이스와 실시간으로 연동되어 본인 확인 용도로 활용됩니다.
-        </p>
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 30px; border-radius: 15px; text-align: left; line-height: 2; border: 1px solid #1e3a5f;">
+        <p style="color: #00c3ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 15px;">[ 필수 이행 사항 ]</p>
+        <ul style="list-style: none; padding: 0; color: #ccc; font-size: 0.95rem;">
+            <li style="margin-bottom: 20px;">
+                <b>1. 실시간 위치 추적:</b> 본인은 교육 및 관리 보안을 위해 시스템 접속 시 실시간 GPS 위치 정보가 사령관 지휘본부에 공유됨에 무조건적으로 동의한다.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <b>2. 유심(USIM) 변경 대응:</b> 한국 입국 후 유심 교체로 인해 전화번호가 변경될 경우, <b>시스템상에서 신규 번호로 자동 갱신</b>됨을 승낙하며 이를 통한 본인 인증 체계를 유지한다.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <b>3. 동의 효력의 지속:</b> 단말기 식별 번호를 통해 번호 변경과 관계없이 <b>위치 정보 제공 동의의 효력은 자동으로 승계</b>되며, 임의로 추적을 차단할 수 없다.
+            </li>
+        </ul>
     </div>
 
     <div style="margin-top: 35px;">
-        <button onclick="requestLocation()" style="width: 100%; padding: 20px; background: #00c3ff; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem;">
-            위치 정보 공유 및 행정 고지 확인
+        <button onclick="activateTracking()" style="width: 100%; padding: 25px; background: #00c3ff; color: #000; font-weight: bold; border: none; border-radius: 15px; cursor: pointer; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 20px #00c3ff'">
+            위치 추적 및 자동 갱신 시스템 가동 승낙
         </button>
     </div>
 </div>
 
 <script>
-    function requestLocation() {
+    function activateTracking() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
-                alert("위치 좌표가 확인되었습니다. 사령관 지휘소에 보안 지역으로 등록됩니다.");
-                nextStep(4); // 마지막 4단계(최종 서명)로 이동
+                alert("위치 추적 시스템이 가동되었습니다. 이제 2단계 보안 서약으로 이동합니다.");
+                // 2단계(NDA)로 이동하는 로직
             }, function(error) {
-                alert("보안을 위해 위치 정보 제공은 필수입니다. 설정을 확인해 주십시오.");
+                alert("보안 정책상 위치 정보 공유 없이는 가입이 불가능합니다.");
             });
         }
     }
