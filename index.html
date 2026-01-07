@@ -1,47 +1,51 @@
-<div id="lecture-command-center" style="width: 100%; height: 100vh; background: #000; color: #fff; position: relative; overflow: hidden;">
+<div id="graduation-ceremony" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 20000; display: flex; justify-content: center; align-items: center; flex-direction: column;">
     
-    <div id="video-area" style="width: 80%; height: 75%; margin: 0 auto; background: #111; border: 2px solid #333; position: relative; top: 50px; display: flex; justify-content: center; align-items: center;">
-        <h2 style="color: #444; letter-spacing: 10px;">LECTURE STREAMING...</h2>
+    <div id="certificate-glass" style="width: 700px; padding: 60px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 2px solid gold; border-radius: 40px; text-align: center; box-shadow: 0 0 100px rgba(212, 175, 55, 0.4); transform: scale(0.8); opacity: 0; transition: 2s;">
+        
+        <div style="margin-bottom: 30px;">
+            <img src="https://img.icons8.com/color/96/000000/medal-first-place.png" style="width: 80px;">
+        </div>
+        
+        <h1 style="color: gold; letter-spacing: 10px; font-size: 2.5rem; margin-bottom: 10px;">CERTIFICATE OF COMPLETION</h1>
+        <p style="color: #fff; font-size: 1.1rem; letter-spacing: 3px;">WBPC 정예 요원 인증서</p>
+        
+        <hr style="border: 0.5px solid rgba(212,175,55,0.3); margin: 40px 0;">
+        
+        <div style="font-size: 1.2rem; line-height: 2; color: #eee;">
+            <p>성명: <span style="color: gold; font-weight: bold;">KIM CHUL-SU</span></p>
+            <p>귀하는 30일간의 엄격한 WBPC 교육 공정을 성실히 이수하였으며,<br> AI 엘레나의 모든 검증을 통과하였기에 이 증서를 수여합니다.</p>
         </div>
 
-    <div id="elena-monitor" style="position: absolute; top: 20px; right: 20px; width: 250px; background: rgba(0, 0, 0, 0.8); border: 2px solid gold; border-radius: 15px; padding: 15px; text-align: center; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);">
-        <div style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid gold; margin: 0 auto; overflow: hidden;">
-            <img src="https://img.icons8.com/clouds/100/000000/female-profile.png" style="width: 100%;">
-        </div>
-        <p style="color: gold; font-size: 0.8rem; margin: 10px 0 5px;">AI INSTRUCTOR ELENA</p>
-        <div style="font-size: 0.7rem; color: #0f0;">● EYE-TRACKING ACTIVE</div>
-        
-        <div style="width: 100%; height: 5px; background: #222; margin-top: 15px; border-radius: 5px; overflow: hidden;">
-            <div id="focus-bar" style="width: 100%; height: 100%; background: #0f0; transition: 0.5s;"></div>
+        <div style="margin-top: 50px; font-family: 'serif'; font-style: italic; color: gold; font-size: 1.5rem;">
+            COMMANDER IN CHIEF: WBPC
         </div>
     </div>
 
-    <div style="position: absolute; bottom: 0; width: 100%; height: 100px; background: rgba(20, 20, 20, 0.9); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #d4af37;">
-        <div style="text-align: center;">
-            <p style="color: #888; margin: 0; font-size: 0.8rem;">TODAY'S PROCESS</p>
-            <p style="color: gold; font-size: 1.5rem; font-weight: bold; margin: 0;">45 / 140 MIN</p>
-        </div>
-        
-        <div style="text-align: center;">
-            <p style="color: #888; margin: 0; font-size: 0.8rem;">STRIKE COUNT</p>
-            <p id="strike-display" style="color: #ff4444; font-size: 1.5rem; font-weight: bold; margin: 0;">[ 0 / 3 ]</p>
-        </div>
-
-        <button onclick="emergencyExit()" style="background: transparent; border: 1px solid #555; color: #555; padding: 10px 25px; border-radius: 5px;">PAUSE SESSION</button>
+    <div id="premium-unlock-area" style="margin-top: 50px; opacity: 0; transition: 3s;">
+        <button onclick="enterPremiumSector()" style="padding: 20px 80px; background: gold; color: #000; font-weight: bold; border: none; border-radius: 50px; font-size: 1.5rem; cursor: pointer; box-shadow: 0 0 30px gold;">
+            PREMIUM SECTOR UNLOCKED
+        </button>
     </div>
-
 </div>
 
 <script>
-    // 10초 이상 시선 이탈 시 스트라이크 로직 시뮬레이션
-    let strikeCount = 0;
-    function detectDistraction() {
-        strikeCount++;
-        document.getElementById('strike-display').innerText = `[ ${strikeCount} / 3 ]`;
-        alert("엘레나 경고: 10초 이상 시선이 이탈되었습니다! (누적 " + strikeCount + "회)");
-        if(strikeCount >= 3) {
-            alert("공정 실패: 오늘의 교육이 초기화됩니다. 사령관님께 보고됩니다.");
-            location.reload();
-        }
+    // 수료식 시작 애니메이션
+    window.onload = function() {
+        const cert = document.getElementById('certificate-glass');
+        const unlock = document.getElementById('premium-unlock-area');
+        
+        setTimeout(() => {
+            cert.style.opacity = '1';
+            cert.style.transform = 'scale(1)';
+        }, 500);
+
+        setTimeout(() => {
+            unlock.style.opacity = '1';
+        }, 3000);
+    };
+
+    function enterPremiumSector() {
+        alert("사령관님, 이제 이 수강생은 모든 권한을 획득했습니다. 프리미엄 라운지로 이동합니다!");
+        // 프리미엄 컨텐츠 페이지로 이동
     }
 </script>
