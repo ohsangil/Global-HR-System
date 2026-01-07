@@ -7,40 +7,87 @@
     <style>
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; overflow: hidden; }
         
-        /* 로비 화면 */
-        #entry-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; background: #000; transition: all 0.8s ease; }
-        .logo-circle { width: 120px; height: 120px; border: 3px solid #ffd700; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; font-weight: bold; box-shadow: 0 0 20px gold; margin-bottom: 20px; }
-        .enter-btn { padding: 12px 35px; border: 2px solid #ffd700; background: transparent; color: #ffd700; font-size: 1.1rem; cursor: pointer; letter-spacing: 4px; z-index: 1001; }
-        .enter-btn:hover { background: #ffd700; color: #000; box-shadow: 0 0 15px gold; }
+        #entry-screen { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            z-index: 1000; background: radial-gradient(circle, #222 0%, #000 100%); 
+        }
+
+        /* 1. 입체 골드 로고 (이미지 대신 3D 링 효과) */
+        .gold-logo-3d {
+            width: 180px; height: 180px; border-radius: 50%;
+            background: linear-gradient(145deg, #d4af37, #8a6d3b);
+            border: 8px solid #ffd700;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px #fff;
+            margin-bottom: 25px; transition: 0.5s;
+        }
+        .gold-logo-3d span { font-size: 2.5rem; font-weight: 900; color: #000; text-shadow: 1px 1px 2px rgba(255,255,255,0.5); }
+
+        h2 { letter-spacing: 8px; font-weight: 300; margin-bottom: 40px; text-shadow: 0 0 10px gold; }
+
+        /* 2. 3D 국가 선택 버튼 (깊은 입체감) */
+        .country-selector { display: flex; gap: 30px; margin-bottom: 50px; }
+        .btn-3d {
+            width: 80px; height: 50px; border: none; border-radius: 10px;
+            background: linear-gradient(145deg, #333, #000);
+            box-shadow: 7px 7px 15px #000, -3px -3px 10px #444;
+            cursor: pointer; font-size: 2rem; display: flex; justify-content: center; align-items: center;
+            transition: 0.3s;
+        }
+        .btn-3d:hover { box-shadow: 0 0 20px gold; transform: translateY(-5px); }
+        .btn-3d:active { box-shadow: inset 5px 5px 10px #000; transform: translateY(2px); }
+
+        /* 3. 3D 입장 버튼 (웅장한 금색 프레임) */
+        .enter-btn-3d { 
+            padding: 20px 70px; font-size: 1.4rem; font-weight: bold; letter-spacing: 6px;
+            color: #ffd700; border: 3px solid #ffd700; border-radius: 15px;
+            background: #000;
+            box-shadow: 10px 10px 20px #000, -5px -5px 15px #222;
+            cursor: pointer; transition: 0.4s;
+        }
+        .enter-btn-3d:hover { 
+            background: #ffd700; color: #000; 
+            box-shadow: 0 0 40px #ffd700; 
+        }
 
         /* 지휘소 내부 */
-        #main-hq { width: 100%; height: 100vh; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, #1a1a1a 0%, #000 100%); }
-        .hq-box { border: 4px double #ffd700; padding: 40px; box-shadow: 0 0 25px rgba(255, 215, 0, 0.2); }
-        h1 { font-size: 2.8rem; letter-spacing: 10px; margin-bottom: 15px; }
-        .status { margin-top: 25px; color: #00ff00; font-family: monospace; font-size: 0.9rem; line-height: 1.6; }
+        #main-hq { width: 100%; height: 100vh; display: none; flex-direction: column; justify-content: center; align-items: center; background: #000; }
+        .hq-box { border: 10px double #ffd700; padding: 60px; box-shadow: 0 0 50px gold; }
     </style>
 </head>
 <body>
 
     <div id="entry-screen">
-        <div class="logo-circle">WBPC</div>
-        <h2 style="letter-spacing: 5px; margin-bottom: 30px;">GLOBAL COMMAND CENTER</h2>
-        <button class="enter-btn" onclick="openGate()">SYSTEM ENTER</button>
+        <div class="gold-logo-3d">
+            <span>WBPC</span>
+        </div>
+        
+        <h2>GLOBAL COMMAND CENTER</h2>
+        
+        <div class="country-selector">
+            <button class="btn-3d" title="KOREA">🇰🇷</button>
+            <button class="btn-3d" title="USA">🇺🇸</button>
+            <button class="btn-3d" title="GLOBAL">🌐</button>
+        </div>
+
+        <button class="enter-btn-3d" onclick="openGate()">SYSTEM ENTER</button>
     </div>
 
     <div id="main-hq">
         <div class="hq-box">
-            <h1>WBPC GLOBAL HQ</h1>
-            <p style="color: #fff; letter-spacing: 2px;">본사 통합 전략 지휘소 가동 중</p>
-            <div class="status">> CONNECTION: ENCRYPTED<br>> COMMANDER: AUTHENTICATED<br>> WELCOME TO THE CENTER.</div>
+            <h1 style="font-size: 3.5rem; letter-spacing: 15px;">WBPC GLOBAL HQ</h1>
+            <p style="color: #fff; letter-spacing: 5px; font-size: 1.5rem;">본사 통합 전략 지휘소 가동 중</p>
         </div>
     </div>
 
     <script>
         function openGate() {
-            // 강제로 로비를 숨기고 지휘소를 보여주는 스위치
-            document.getElementById('entry-screen').style.display = 'none';
-            document.getElementById('main-hq').style.display = 'flex';
+            document.getElementById('entry-screen').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('entry-screen').style.display = 'none';
+                document.getElementById('main-hq').style.display = 'flex';
+            }, 800);
         }
     </script>
 </body>
