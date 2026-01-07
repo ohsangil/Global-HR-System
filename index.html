@@ -1,47 +1,29 @@
-<div id="grand-lecture-hall" style="position: relative; width: 100%; height: 88vh; background: #000; overflow: hidden; border-radius: 30px; border: 4px solid #444;">
-
-    <div id="hall-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(20,20,20,0.9) 100%), 
-        url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=2070'); 
-        background-size: cover; background-position: center; opacity: 0.2; filter: blur(2px);">
+<div id="lecture-engine" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center;">
+    
+    <div style="width: 100%; display: flex; justify-content: space-between; padding: 20px 40px; background: rgba(255,215,0,0.1); border-bottom: 1px solid gold;">
+        <div style="color: gold; font-weight: bold; letter-spacing: 3px;">PHASE: KOREAN LANGUAGE - DAY 01</div>
+        <div id="main-timer" style="color: #fff; font-size: 1.5rem; font-family: monospace; font-weight: bold;">남은 시간 20:00</div>
+        <div style="color: #0f0;">● LIVE STREAMING</div>
     </div>
 
-    <div id="student-crowd" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 40%; 
-        background: linear-gradient(to top, rgba(0,0,0,1) 20%, transparent 100%); z-index: 5; 
-        display: flex; justify-content: center; align-items: flex-end; padding-bottom: 20px;">
-        <div style="width: 90%; display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; opacity: 0.4;">
-            <div style="height: 40px; background: #222; border-radius: 50% 50% 0 0;"></div>
-            <div style="height: 45px; background: #1a1a1a; border-radius: 50% 50% 0 0;"></div>
-            </div>
-    </div>
-
-    <div id="grand-glass-board" style="position: absolute; top: 10%; left: 10%; width: 80%; height: 60%; 
-        background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px); border: 1px solid rgba(255,215,0,0.2); 
-        border-radius: 20px; z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: center;
-        box-shadow: 0 0 50px rgba(0,0,0,0.5), inset 0 0 30px rgba(212,175,55,0.1);">
+    <div id="active-board" style="flex: 1; width: 85%; margin-top: 30px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 2px solid rgba(212,175,55,0.3); border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
         
-        <div style="text-align: center;">
-            <p style="color: gold; font-family: monospace; letter-spacing: 5px; font-size: 1.2rem; margin-bottom: 20px;">[ WBPC GLOBAL STANDARD EDUCATION ]</p>
-            <h1 style="color: #fff; font-size: 4rem; font-weight: 900; line-height: 1.2; text-shadow: 0 0 20px rgba(255,255,255,0.5);">
-                제 1교시: <span style="color: #ffd700;">기초 한글 발음</span>
-            </h1>
-            <div style="margin-top: 40px; padding: 20px; border-top: 1px solid rgba(255,215,0,0.5); display: inline-block;">
-                <span style="font-size: 3rem; color: #fff; letter-spacing: 20px;">아 야 어 여 오 요</span>
-            </div>
+        <div id="content-slider" style="text-align: center;">
+            <h1 style="color: #fff; font-size: 5rem; margin: 0; letter-spacing: 20px; text-shadow: 0 0 30px gold;">가 나 다 라</h1>
+            <p style="color: #ffd700; font-size: 2rem; margin-top: 20px; opacity: 0.8;">Ga Na Da Ra</p>
+        </div>
+
+        <div id="alert-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,0,0,0.4); z-index: 100; border-radius: 20px; justify-content: center; align-items: center; flex-direction: column;">
+            <h1 style="color: #fff; font-size: 4rem; text-shadow: 0 0 20px #000;">집중하십시오!</h1>
+            <p style="color: #fff; font-size: 1.5rem;">시선이 감지되지 않습니다. (경고 누적 시 강좌 초기화)</p>
         </div>
     </div>
 
-    <div id="professor-area" style="position: absolute; bottom: 50px; right: 50px; z-index: 20; text-align: center;">
-        <div style="width: 220px; aspect-ratio: 1; border-radius: 50%; border: 4px solid gold; overflow: hidden; box-shadow: 0 0 30px gold;">
-             <div style="width: 100%; height: 100%; background: #222; display: flex; align-items: center; justify-content: center; color: gold;">PROFESSOR</div>
+    <div style="width: 90%; height: 60px; margin: 30px; background: #111; border-radius: 30px; border: 1px solid #333; overflow: hidden; display: flex; align-items: center; padding: 0 20px;">
+        <span style="color: #888; font-size: 0.8rem; margin-right: 20px;">STUDENT ATTENTION RATE</span>
+        <div style="flex: 1; height: 10px; background: #222; border-radius: 5px;">
+            <div style="width: 92%; height: 100%; background: linear-gradient(90deg, gold, orange); box-shadow: 0 0 10px gold;"></div>
         </div>
-        <div style="margin-top: 15px; background: gold; color: #000; padding: 5px 20px; border-radius: 20px; font-weight: bold;">
-            COMMANDER ELENA
-        </div>
-    </div>
-
-    <div style="position: absolute; top: 40px; left: 40px; z-index: 30; font-family: 'Courier New', monospace;">
-        <div style="color: #0f0; font-size: 1rem; margin-bottom: 5px;">● AI ATTENTION SCANNER</div>
-        <div style="color: red; font-size: 1.5rem; font-weight: bold;">STRIKE: 0 / 3</div>
+        <span style="color: gold; margin-left: 20px; font-weight: bold;">92%</span>
     </div>
 </div>
