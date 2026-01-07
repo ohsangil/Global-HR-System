@@ -1,41 +1,47 @@
-<div id="worker-lounge-main" style="width: 100%; min-height: 100vh; background: radial-gradient(circle at top, #111 0%, #000 100%); color: #fff; padding: 40px;">
+<div id="lecture-command-center" style="width: 100%; height: 100vh; background: #000; color: #fff; position: relative; overflow: hidden;">
     
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 20px; margin-bottom: 50px;">
-        <div>
-            <h4 style="color: gold; margin: 0; letter-spacing: 2px;">WBPC OFFICIAL WORKER</h4>
-            <h1 style="margin: 10px 0 0 0; font-size: 2rem;">WELCOME, <span id="display-name" style="text-shadow: 0 0 15px gold;">KIM CHUL-SU</span>님</h1>
+    <div id="video-area" style="width: 80%; height: 75%; margin: 0 auto; background: #111; border: 2px solid #333; position: relative; top: 50px; display: flex; justify-content: center; align-items: center;">
+        <h2 style="color: #444; letter-spacing: 10px;">LECTURE STREAMING...</h2>
         </div>
-        <div style="text-align: right;">
-            <div style="color: #0f0; font-size: 0.9rem; font-weight: bold;">● SYSTEM ONLINE</div>
-            <div id="auth-status" style="margin-top: 5px; font-size: 0.8rem; color: #888;">보안 서약 및 위치 추적 가동 중</div>
+
+    <div id="elena-monitor" style="position: absolute; top: 20px; right: 20px; width: 250px; background: rgba(0, 0, 0, 0.8); border: 2px solid gold; border-radius: 15px; padding: 15px; text-align: center; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);">
+        <div style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid gold; margin: 0 auto; overflow: hidden;">
+            <img src="https://img.icons8.com/clouds/100/000000/female-profile.png" style="width: 100%;">
+        </div>
+        <p style="color: gold; font-size: 0.8rem; margin: 10px 0 5px;">AI INSTRUCTOR ELENA</p>
+        <div style="font-size: 0.7rem; color: #0f0;">● EYE-TRACKING ACTIVE</div>
+        
+        <div style="width: 100%; height: 5px; background: #222; margin-top: 15px; border-radius: 5px; overflow: hidden;">
+            <div id="focus-bar" style="width: 100%; height: 100%; background: #0f0; transition: 0.5s;"></div>
         </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; margin-bottom: 50px;">
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 20px; padding: 40px; text-align: center;">
-            <h3 style="color: #888; font-size: 1rem;">현재 교육 이수율</h3>
-            <div style="width: 150px; height: 150px; border: 8px solid #222; border-top-color: gold; border-radius: 50%; margin: 30px auto; display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; color: gold;">
-                15%
-            </div>
-            <p style="font-size: 0.8rem; color: #555;">30일 중 5일 이수 완료</p>
+    <div style="position: absolute; bottom: 0; width: 100%; height: 100px; background: rgba(20, 20, 20, 0.9); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #d4af37;">
+        <div style="text-align: center;">
+            <p style="color: #888; margin: 0; font-size: 0.8rem;">TODAY'S PROCESS</p>
+            <p style="color: gold; font-size: 1.5rem; font-weight: bold; margin: 0;">45 / 140 MIN</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <p style="color: #888; margin: 0; font-size: 0.8rem;">STRIKE COUNT</p>
+            <p id="strike-display" style="color: #ff4444; font-size: 1.5rem; font-weight: bold; margin: 0;">[ 0 / 3 ]</p>
         </div>
 
-        <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 20px;">
-            <div onclick="startLecture('Hangeul')" style="background: linear-gradient(90deg, #1a2a44, #0d1526); border: 1px solid #00c3ff; border-radius: 15px; padding: 30px; cursor: pointer; transition: 0.3s; display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-                <div>
-                    <h2 style="margin: 0; color: #00c3ff;">01. 한글 기초 및 실무 언어</h2>
-                    <p style="margin: 10px 0 0 0; color: #888;">입국 전 필수 한글 공정 용어 마스터</p>
-                </div>
-                <div style="font-size: 2.5rem;">🇰🇷</div>
-            </div>
-
-            <div style="background: #111; border: 1px solid #333; border-radius: 15px; padding: 30px; opacity: 0.5; cursor: not-allowed; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h2 style="margin: 0; color: #555;">02. 프리미엄 직무 심화</h2>
-                    <p style="margin: 10px 0 0 0; color: #444;">30일 교육 이수 후 자동으로 개방됩니다.</p>
-                </div>
-                <div style="font-size: 2.5rem; filter: grayscale(1);">🔒</div>
-            </div>
-        </div>
+        <button onclick="emergencyExit()" style="background: transparent; border: 1px solid #555; color: #555; padding: 10px 25px; border-radius: 5px;">PAUSE SESSION</button>
     </div>
+
 </div>
+
+<script>
+    // 10초 이상 시선 이탈 시 스트라이크 로직 시뮬레이션
+    let strikeCount = 0;
+    function detectDistraction() {
+        strikeCount++;
+        document.getElementById('strike-display').innerText = `[ ${strikeCount} / 3 ]`;
+        alert("엘레나 경고: 10초 이상 시선이 이탈되었습니다! (누적 " + strikeCount + "회)");
+        if(strikeCount >= 3) {
+            alert("공정 실패: 오늘의 교육이 초기화됩니다. 사령관님께 보고됩니다.");
+            location.reload();
+        }
+    }
+</script>
