@@ -1,41 +1,26 @@
-<div id="wbpc-unified-gate" style="width: 100%; max-width: 950px; margin: 40px auto; background: rgba(5, 10, 20, 0.98); border: 3px solid gold; border-radius: 45px; padding: 60px; color: #fff; font-family: 'Pretendard', sans-serif; box-shadow: 0 0 120px rgba(212, 175, 55, 0.25);">
+<div id="security-upgrade-sector" style="width: 100%; max-width: 900px; margin: 50px auto; background: rgba(10, 0, 0, 0.98); border: 2px solid #ff4444; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(255, 68, 68, 0.4);">
     
-    <div style="text-align: center; margin-bottom: 50px;">
-        <div style="font-size: 3.5rem; margin-bottom: 15px;">👑</div>
-        <h1 style="color: gold; letter-spacing: 15px; font-size: 2.5rem; margin: 0;">WBPC GLOBAL</h1>
-        <p style="color: #00c3ff; letter-spacing: 3px; margin-top: 15px; font-weight: bold;">[ 정예 요원 등록 및 신원 귀속 시스템 ]</p>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <div style="color: #ff4444; font-size: 0.9rem; font-weight: bold; letter-spacing: 5px; margin-bottom: 10px;">LEVEL 2 ACCESS REQUIRED</div>
+        <h2 style="color: #fff; letter-spacing: 8px; font-size: 2.2rem; margin: 0;">기밀 유지 및 법적 책임 재확약</h2>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-        
-        <div style="background: rgba(255, 255, 255, 0.03); padding: 35px; border-radius: 25px; border: 1px solid #333;">
-            <h3 style="color: gold; margin-bottom: 25px; border-left: 5px solid gold; padding-left: 15px;">01. 요원 인적 사항</h3>
-            <input type="text" placeholder="여권상 영문 성명" style="width: 100%; padding: 20px; background: #000; border: 1px solid #444; color: gold; border-radius: 12px; margin-bottom: 20px; font-size: 1.1rem;">
-            <input type="text" placeholder="현지 모바일 번호" style="width: 100%; padding: 20px; background: #000; border: 1px solid #444; color: gold; border-radius: 12px; margin-bottom: 20px; font-size: 1.1rem;">
-            <div style="color: #666; font-size: 0.85rem; line-height: 1.6;">
-                ※ 입력하신 정보는 사령관님이 보유한 현지 송출 명단 사진과 AI 엘레나가 실시간 대조하여 일치할 경우에만 승인됩니다.
-            </div>
-        </div>
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid #441111; padding: 30px; border-radius: 20px; line-height: 2; color: #ddd; font-size: 0.95rem; margin-bottom: 40px;">
+        <p style="color: #ff4444; font-weight: bold;">[ 보안 구역 진입 경고 ]</p>
+        1. 본 구역에서 제공되는 모든 교육 자료와 지휘 체계는 WBPC의 <b>핵심 영업비밀</b>로 간주됩니다.<br>
+        2. 귀하가 현재 접속 중인 단말기의 <b>고유 식별 정보(IMEI)와 GPS</b>는 본부에 실시간 기록되고 있습니다.<br>
+        3. 자료 유출 시, 귀하는 대한민국 및 현지 국가 법률에 의거하여 <b>민사상 손해배상(금전적 책임) 및 형사 처벌</b>을 수용할 것을 다시 한번 확약합니까?
+    </div>
 
-        <div style="background: rgba(255, 255, 255, 0.03); padding: 35px; border-radius: 25px; border: 1px solid #ff4444;">
-            <h3 style="color: #ff4444; margin-bottom: 25px; border-left: 5px solid #ff4444; padding-left: 15px;">02. 통합 서약 및 위치 승낙</h3>
-            <div style="background: rgba(0,0,0,0.5); height: 180px; overflow-y: scroll; padding: 20px; font-size: 0.9rem; color: #ccc; line-height: 1.8; border-radius: 10px; border: 1px solid #222;">
-                <b>[위치확인 승낙]</b> 본인은 교육 기간 및 한국 체류 중 실시간 GPS 위치확인에 승낙하며, 보급 유심 장착 시 위치추적 효력이 자동 승계됨에 동의함.<br><br>
-                <b>[민·형사 책임]</b> 내부 기밀 및 교육 공정 유출 시 부정경쟁방지법에 의한 형사 처벌과 징벌적 손해배상을 전액 책임질 것을 확약함.<br><br>
-                <b>[행정 귀속]</b> 본인이 송출 사무실에 제출한 모든 서류의 소유권은 WBPC 지휘본부에 귀속됨을 확인함.
-            </div>
-            
-            <div style="margin-top: 25px; background: #fff; height: 100px; border-radius: 10px; border: 3px solid #ff4444; position: relative;">
-                <canvas id="unified-sign-pad" style="width: 100%; height: 100%;"></canvas>
-                <p style="position: absolute; bottom: 5px; right: 10px; color: #aaa; font-size: 0.7rem;">(서명) SIGNATURE</p>
-            </div>
+    <div style="margin-bottom: 30px;">
+        <p style="text-align: center; color: #888; font-size: 0.85rem; margin-bottom: 15px;">보안 등급 승인을 위해 아래에 한 번 더 서명하십시오.</p>
+        <div style="background: #fff; height: 160px; border-radius: 15px; border: 4px solid #ff4444; position: relative;">
+            <canvas id="re-pledge-sign" style="width: 100%; height: 100%; cursor: crosshair;"></canvas>
+            <p style="position: absolute; bottom: 5px; right: 15px; color: #aaa; font-size: 0.7rem;">(재확약 서명) CONFIRMATION</p>
         </div>
     </div>
 
-    <div style="margin-top: 50px; text-align: center;">
-        <button onclick="activateEmpire()" style="width: 80%; padding: 30px; background: linear-gradient(90deg, gold, #b8860b); color: #000; font-weight: bold; font-size: 1.6rem; border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);">
-            위치확인 및 법적책임 확약 후 정예 요원 등록
-        </button>
-        <p style="margin-top: 20px; color: #444; font-size: 0.8rem; letter-spacing: 2px;">SECURED BY ELENA AI | COMMANDER AUTHORIZED</p>
-    </div>
+    <button onclick="enterEducation()" style="width: 100%; padding: 25px; background: #ff4444; color: #fff; font-weight: bold; font-size: 1.4rem; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);">
+        보안 등급 승인 및 교육 구역 진입
+    </button>
 </div>
