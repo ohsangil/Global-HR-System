@@ -1,27 +1,23 @@
-
-<div id="security-sector" style="width: 100%; max-width: 900px; margin: 40px auto; background: rgba(15, 0, 0, 0.98); border: 2px solid #ff4444; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(255, 68, 68, 0.2);">
+<div id="final-administration" style="width: 100%; max-width: 900px; margin: 40px auto; background: rgba(10, 20, 40, 0.98); border: 2px solid #00f0ff; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(0, 240, 255, 0.2);">
     
     <div style="text-align: center; margin-bottom: 40px;">
-        <span style="color: #ff4444; font-weight: bold; border: 1px solid #ff4444; padding: 5px 20px; border-radius: 5px; letter-spacing: 3px;">LEGAL ENFORCEMENT</span>
-        <h1 style="color: #fff; letter-spacing: 8px; font-size: 2.2rem; margin-top: 20px;">비밀유지 및 민·형사 책임 서약</h1>
+        <span style="color: #00f0ff; font-weight: bold; border: 1px solid #00f0ff; padding: 5px 20px; border-radius: 5px; letter-spacing: 3px;">FINAL AUTHORIZATION</span>
+        <h1 style="color: #fff; letter-spacing: 8px; font-size: 2.2rem; margin-top: 20px;">행정 서류 귀속 및 위치확인 승낙</h1>
     </div>
 
-    <div style="background: rgba(0,0,0,0.7); padding: 35px; border-radius: 20px; border: 1px solid #441111; height: 320px; overflow-y: scroll; text-align: left; line-height: 2; color: #eee; margin-bottom: 35px; font-size: 0.95rem;">
-        <p style="color: #ff4444; font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;">[ 서약 내용 ]</p>
-        1. 본인은 WBPC의 교육 공정 및 지휘 시스템을 외부로 유출할 경우, **부정경쟁방지법** 및 관계 법령에 의거하여 즉각적인 **형사 고발**을 당함에 동의한다.<br><br>
-        2. 기밀 유출로 인해 회사에 발생한 유·무형의 손해에 대하여 본인은 **민사상 징벌적 손해배상**을 전액 책임질 것을 확약한다.<br><br>
-        3. 본인은 사무실에서 보급한 유심 및 단말기를 통해 **위치확인**이 상시 이루어짐을 인정하며, 이를 거부하거나 조작할 경우 즉시 자격이 박탈된다.<br><br>
-        4. 본 서약은 대한민국 입국 후에도 동일한 법적 효력을 유지하며, 본인의 전자서명은 법정 증거로 활용됨을 확인한다.
+    <div style="background: rgba(0, 195, 255, 0.05); padding: 35px; border-radius: 20px; border: 1px solid #1e3a5f; margin-bottom: 40px; text-align: left; line-height: 1.9;">
+        <h4 style="color: #00f0ff; margin-bottom: 20px;">[ 최종 확인 사항 ]</h4>
+        <p style="color: #ccc; font-size: 1rem;">
+            1. 본인은 현지 송출 사무실에 제출한 <b>여권 및 신원 서류</b> 일체가 WBPC 본부 시스템으로 이관되어 관리됨을 확인한다.<br><br>
+            2. 대한민국 입국 즉시 사무실에서 지급하는 <b>보급 유심</b>을 장착해야 하며, 해당 번호를 통한 <b>실시간 위치확인</b>에 무조건 승낙한다.<br><br>
+            3. 번호 변경 시에도 시스템은 단말기 식별 번호를 통해 본인을 추적하며, 이에 대한 <b>위치확인 승낙 효력은 자동으로 승계</b>됨을 확약한다.
+        </p>
     </div>
 
-    <div style="margin-bottom: 30px;">
-        <p style="text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 10px;">위 조항을 숙지하였으며 본인의 성명을 서명하십시오.</p>
-        <div style="background: #fff; height: 160px; border-radius: 15px; border: 3px solid #ff4444;">
-            <canvas id="nda-signature" style="width: 100%; height: 100%; cursor: crosshair;"></canvas>
-        </div>
+    <div style="text-align: center;">
+        <p style="color: #888; margin-bottom: 20px;">"나는 WBPC의 모든 규정을 준수하며 정식 요원으로 등록할 것을 요청합니다."</p>
+        <button onclick="completeOnboarding()" style="width: 100%; padding: 30px; background: linear-gradient(90deg, #00c3ff, #0080ff); color: #fff; font-weight: bold; font-size: 1.5rem; border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 10px 40px rgba(0, 195, 255, 0.4);">
+            최종 승인 및 WBPC 라운지 입장
+        </button>
     </div>
-
-    <button onclick="submitNDA()" style="width: 100%; padding: 25px; background: #ff4444; color: #fff; font-weight: bold; font-size: 1.4rem; border: none; border-radius: 15px; cursor: pointer; transition: 0.3s;">
-        서약 완료 및 행정 서류 귀속 확인
-    </button>
 </div>
