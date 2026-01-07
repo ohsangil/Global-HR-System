@@ -1,40 +1,24 @@
-<div id="wbpc-main-gate" style="width: 100%; max-width: 950px; margin: 50px auto; background: rgba(5, 10, 20, 0.98); border: 2px solid gold; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(212, 175, 55, 0.2); font-family: 'Malgun Gothic', sans-serif;">
+<div id="entrance-gate" style="width: 100%; max-width: 900px; margin: 40px auto; background: rgba(5, 10, 20, 0.95); border: 2px solid gold; border-radius: 40px; padding: 60px; color: #fff; text-align: center; box-shadow: 0 0 80px rgba(212, 175, 55, 0.3);">
     
-    <div style="text-align: center; margin-bottom: 50px;">
-        <div style="font-size: 3rem; margin-bottom: 10px;">👑</div>
-        <h1 style="color: gold; letter-spacing: 12px; font-size: 2.5rem; margin: 0;">WBPC GLOBAL</h1>
-        <p style="color: #888; letter-spacing: 3px; margin-top: 10px;">COMMAND & EDUCATION CENTER</p>
+    <div style="margin-bottom: 40px;">
+        <h1 style="color: gold; letter-spacing: 15px; font-size: 2.5rem; margin-bottom: 10px;">WBPC ENTER</h1>
+        <p style="color: #666; letter-spacing: 5px;">GLOBAL COMMAND CENTER</p>
     </div>
 
-    <div id="gate-step-1" style="background: rgba(255, 255, 255, 0.03); border: 1px solid #333; border-radius: 20px; padding: 40px;">
-        <h3 style="color: #00c3ff; border-left: 5px solid #00c3ff; padding-left: 15px; margin-bottom: 30px;">STEP 01. 위치확인 및 명단 대조 승낙</h3>
-        
-        <div style="color: #ccc; line-height: 1.8; font-size: 1rem; margin-bottom: 35px;">
-            <p>1. 본 시스템은 보안 유지를 위해 접속 시 실시간 **위치확인** 정보 공유를 필수로 합니다.</p>
-            <p>2. 입국 후 보급된 유심으로 변경 시 **번호가 자동 갱신**되며 **위치확인 승낙** 효력은 자동 승계됩니다.</p>
-            <p>3. 제출된 명단 사진과 입력 정보가 불일치할 경우 가입 및 입장이 즉시 거절됩니다.</p>
-        </div>
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid #333; margin-bottom: 40px; text-align: left;">
+        <p style="color: gold; font-weight: bold; margin-bottom: 15px;">[ AI 엘레나의 안내 ]</p>
+        <p style="color: #ccc; font-size: 0.95rem; line-height: 1.8;">
+            "반갑습니다. WBPC 지휘본부에 오신 것을 환영합니다.<br>
+            귀하의 안전한 입국과 성실한 교육 이수를 위해 **실시간 위치확인**을 가동합니다.<br>
+            또한, 사무실에서 보급한 유심으로 변경 시 번호는 자동으로 갱신됩니다."
+        </p>
+    </div>
 
-        <div style="margin-bottom: 40px;">
-            <input type="text" id="worker-name" placeholder="여권상 성명을 입력하십시오" style="width: 100%; padding: 20px; background: #000; border: 1px solid gold; color: gold; border-radius: 10px; font-size: 1.2rem; text-align: center; outline: none;">
-        </div>
-
-        <button onclick="startVerification()" style="width: 100%; padding: 25px; background: gold; color: #000; font-weight: bold; font-size: 1.4rem; border: none; border-radius: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);">
-            위치확인 승낙 및 명단 대조 시작
+    <div style="margin-bottom: 30px;">
+        <button onclick="step2()" style="width: 100%; padding: 25px; background: gold; color: #000; font-weight: bold; font-size: 1.3rem; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
+            위치확인 승낙 및 입장 시작
         </button>
     </div>
 
-    <div style="margin-top: 40px; text-align: center; color: #555; font-size: 0.85rem;">
-        IP ADDRESS: <span id="user-ip">121.XXX.XXX.82</span> | STATUS: SECURED BY ELENA AI
-    </div>
+    <p style="color: #444; font-size: 0.8rem;">※ 본 화면은 사령관님의 명단 데이터와 실시간 연동 중입니다.</p>
 </div>
-
-<script>
-    function startVerification() {
-        const name = document.getElementById('worker-name').value;
-        if(!name) { alert("성명을 입력해 주세요."); return; }
-        
-        alert(name + " 요원님, 위치확인이 시작되었습니다. 명단 사진 데이터를 스캔합니다...");
-        // 다음 단계(2번 NDA 서약)로 이동하는 로직
-    }
-</script>
