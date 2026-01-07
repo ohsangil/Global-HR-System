@@ -1,57 +1,39 @@
-<div id="cycle-controller" style="width: 100%; padding: 30px; background: rgba(0,0,0,0.5); border-radius: 20px; border: 1px dashed gold;">
+<div id="exam-control-center" style="width: 100%; background: rgba(20,0,0,0.3); border: 2px solid #ff4444; border-radius: 25px; padding: 40px; box-shadow: 0 0 50px rgba(255,0,0,0.1);">
     
-    <div style="display: flex; justify-content: center; align-items: center; gap: 50px;">
-        <div id="current-mode-box" style="text-align: center; padding: 20px 50px; border-radius: 15px; background: linear-gradient(145deg, #111, #000); border: 2px solid gold; min-width: 300px;">
-            <h4 id="mode-label" style="color: gold; margin: 0; letter-spacing: 5px;">현재 상태: 교육 중</h4>
-            <div id="timer-display" style="font-size: 3.5rem; font-weight: 900; color: #fff; font-family: 'Courier New', monospace; margin-top: 10px;">20:00</div>
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ff4444; padding-bottom: 20px; margin-bottom: 30px;">
+        <div>
+            <h2 style="color: #ff4444; letter-spacing: 5px; margin: 0;">FINAL TEST MODE</h2>
+            <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">DAY 01: 한글 기초 평가</p>
         </div>
-
-        <div style="color: #888; font-size: 1rem;">
-            NEXT PHASE: <span style="color: #fff;">10분 휴식 (자동 전환)</span><br>
-            <p style="margin-top: 5px; font-size: 0.8rem;">* 10초 감시 시스템 상시 가동 중</p>
+        <div style="text-align: right;">
+            <div id="exam-timer" style="font-size: 2.5rem; color: #fff; font-family: monospace; font-weight: bold;">20:00</div>
+            <span style="color: #ff4444; font-size: 0.8rem;">※ 화면 이탈 시 즉시 실격 처리</span>
         </div>
     </div>
 
-    <div style="width: 100%; height: 8px; background: #222; margin-top: 30px; border-radius: 4px; overflow: hidden;">
-        <div id="cycle-progress" style="width: 100%; height: 100%; background: gold; transition: 1s linear;"></div>
+    <div id="exam-paper" style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; text-align: left;">
+        <h3 style="color: gold; margin-bottom: 30px;">Q1. 다음 중 'Ga' 라고 발음하는 글자를 선택하시오.</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <button class="exam-option" onclick="selectAns(1)">1) 나 (Na)</button>
+            <button class="exam-option" onclick="selectAns(2)">2) 가 (Ga)</button>
+            <button class="exam-option" onclick="selectAns(3)">3) 다 (Da)</button>
+            <button class="exam-option" onclick="selectAns(4)">4) 라 (Ra)</button>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; display: flex; justify-content: space-around;">
+        <div class="monitor-stat">제출 인원: <span style="color: gold;">12 / 42</span></div>
+        <div class="monitor-stat">평균 점수: <span style="color: #0f0;">88점</span></div>
+        <div class="monitor-stat">부정 의심: <span style="color: red;">0</span></div>
     </div>
 </div>
 
-<script>
-    let timeLeft = 1200; // 20분 (초 단위)
-    let isEducation = true;
-
-    const timerInt = setInterval(() => {
-        timeLeft--;
-        updateTimerUI();
-
-        if (timeLeft <= 0) {
-            switchCycle();
-        }
-    }, 1000);
-
-    function updateTimerUI() {
-        const min = Math.floor(timeLeft / 60);
-        const sec = timeLeft % 60;
-        document.getElementById('timer-display').innerText = 
-            `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-        
-        // 게이지 줄어들기
-        const percent = (timeLeft / (isEducation ? 1200 : 600)) * 100;
-        document.getElementById('cycle-progress').style.width = percent + "%";
+<style>
+    .exam-option { 
+        padding: 20px; background: rgba(255,255,255,0.1); border: 1px solid #444; color: #fff; 
+        font-size: 1.2rem; cursor: pointer; border-radius: 10px; transition: 0.3s; text-align: left;
     }
-
-    function switchCycle() {
-        isEducation = !isEducation;
-        if (isEducation) {
-            timeLeft = 1200; // 20분 교육
-            document.getElementById('mode-label').innerText = "현재 상태: 교육 중";
-            document.getElementById('mode-label').style.color = "gold";
-        } else {
-            timeLeft = 600; // 10분 휴식
-            document.getElementById('mode-label').innerText = "현재 상태: 휴식 중";
-            document.getElementById('mode-label').style.color = "#0f0";
-            alert("20분 교육 종료. 10분간 휴식하십시오.");
-        }
-    }
-</script>
+    .exam-option:hover { background: rgba(212,175,55,0.2); border-color: gold; }
+    .monitor-stat { color: #888; font-size: 0.9rem; }
+</style>
