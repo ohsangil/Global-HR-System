@@ -1,39 +1,25 @@
-<div id="live-ops-report" style="width: 100%; min-height: 100vh; background: #000; color: #fff; padding: 30px; border-top: 5px solid gold;">
+<div id="lobby-gate" style="width: 100%; max-width: 850px; margin: 60px auto; background: rgba(5, 10, 20, 0.98); border: 2px solid gold; border-radius: 40px; padding: 60px; color: #fff; box-shadow: 0 0 100px rgba(212, 175, 55, 0.2);">
     
-    <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-bottom: 30px;">
-        <div>
-            <span style="color: #0f0; font-weight: bold; animation: blink 1.5s infinite;">● LIVE</span> 
-            <span style="margin-left: 10px; color: gold;">지휘소 가동 중 (2026-01-07 22:50)</span>
-        </div>
-        <div style="font-size: 0.9rem; color: #888;">접속 요원: 124명 / 교육 중: 82명</div>
+    <div style="text-align: center; margin-bottom: 50px;">
+        <div style="font-size: 0.8rem; color: gold; letter-spacing: 5px; margin-bottom: 15px;">SECURED BY AI ELENA</div>
+        <h1 style="color: gold; letter-spacing: 15px; font-size: 2.8rem; margin: 0;">WBPC ENTER</h1>
+        <p style="color: #555; margin-top: 10px;">대한민국 입국 예정자 신원 검증 센터</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 30px;">
-        <div style="background: #111; padding: 25px; border-radius: 20px; border: 1px solid #00c3ff; text-align: center;">
-            <p style="color: #00c3ff; font-size: 0.8rem; margin: 0;">오늘의 위치확인 승낙</p>
-            <h2 style="font-size: 2.5rem; margin: 15px 0;">12 <span style="font-size: 1rem;">건</span></h2>
-            <p style="color: #444; font-size: 0.7rem;">보급 유심 번호 동기화 완료</p>
-        </div>
-
-        <div style="background: #111; padding: 25px; border-radius: 20px; border: 1px solid #ff4444; text-align: center;">
-            <p style="color: #ff4444; font-size: 0.8rem; margin: 0;">엘레나 감찰 적발(스트라이크)</p>
-            <h2 style="font-size: 2.5rem; margin: 15px 0;">3 <span style="font-size: 1rem;">건</span></h2>
-            <p style="color: #444; font-size: 0.7rem;">10초 시선 이탈 자동 처리</p>
-        </div>
-
-        <div style="background: #111; padding: 25px; border-radius: 20px; border: 1px solid gold; text-align: center;">
-            <p style="color: gold; font-size: 0.8rem; margin: 0;">30일 공정 완수자</p>
-            <h2 style="font-size: 2.5rem; margin: 15px 0;">5 <span style="font-size: 1rem;">명</span></h2>
-            <p style="color: #444; font-size: 0.7rem;">프리미엄 섹터 권한 부여</p>
-        </div>
+    <div style="background: rgba(0, 195, 255, 0.05); border: 1px solid #1e3a5f; border-radius: 20px; padding: 35px; margin-bottom: 40px; text-align: left;">
+        <h3 style="color: #00c3ff; margin-bottom: 20px;">[ 입장을 위한 필수 승낙 ]</h3>
+        <p style="color: #ccc; font-size: 0.95rem; line-height: 1.8;">
+            - 귀하는 본 지휘소에 입장함과 동시에 **실시간 위치확인** 정보 제공에 승낙하게 됩니다.<br>
+            - 한국 입국 후 <b>사무실 보급 유심</b>으로 변경 시, 본 승낙의 효력은 자동 승계되어 실시간 확인이 유지됩니다.
+        </p>
     </div>
 
-    <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px;">
-        <h4 style="color: gold; margin-bottom: 20px; border-left: 3px solid gold; padding-left: 10px;">RECENT ACTIVITIES</h4>
-        <div style="font-size: 0.9rem; line-height: 2.5; color: #aaa;">
-            <p><span style="color: #555;">[22:45]</span> <span style="color: #fff;">KIM CHUL-SU</span>: 한국 보급 유심 교체 및 <b>위치확인 승낙 완료</b> (화성시)</p>
-            <p><span style="color: #555;">[22:42]</span> <span style="color: #ff4444;">Somchai</span>: 교육 중 시선 이탈 1회 적발 (엘레나 경고 발송)</p>
-            <p><span style="color: #555;">[22:38]</span> <span style="color: #00c3ff;">Nguyen</span>: 제2관문(NDA) 전자서명 제출 완료</p>
-        </div>
+    <div style="margin-bottom: 20px;">
+        <input type="text" placeholder="성명을 입력하십시오 (NAME)" style="width: 100%; padding: 25px; background: #000; border: 1px solid gold; color: gold; border-radius: 15px; font-size: 1.3rem; text-align: center;">
     </div>
+
+    <button onclick="checkIdentity()" style="width: 100%; padding: 25px; background: gold; color: #000; font-weight: bold; font-size: 1.5rem; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
+        위치확인 승낙 및 입장하기
+    </button>
+
 </div>
