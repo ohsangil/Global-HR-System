@@ -1,27 +1,28 @@
-<div id="issued-sim-activation" style="background: rgba(10, 20, 40, 0.98); border: 2px solid #00f0ff; padding: 50px; border-radius: 30px; color: #fff; text-align: center;">
+<div id="registration-step-1-final" style="background: rgba(5, 15, 30, 0.98); border: 2px solid #00c3ff; padding: 50px; border-radius: 30px; box-shadow: 0 0 50px rgba(0, 195, 255, 0.3); color: #fff;">
     
-    <div style="margin-bottom: 30px;">
-        <span style="background: #00f0ff; color: #000; padding: 5px 15px; font-weight: bold; border-radius: 5px;">WBPC ISSUED DEVICE</span>
-        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">보급 유심 및 단말기 활성화</h2>
+    <div style="text-align: center; margin-bottom: 35px;">
+        <span style="color: #00c3ff; font-weight: bold; border: 1px solid #00c3ff; padding: 5px 15px; font-size: 0.8rem; letter-spacing: 2px;">PROTOCOL 01: LOCATION VERIFICATION</span>
+        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">위치확인 및 통신 자동 승계 승낙</h2>
     </div>
 
-    <div style="background: rgba(0, 195, 255, 0.05); padding: 30px; border-radius: 15px; text-align: left; line-height: 1.9; border: 1px solid #1e3a5f; margin-bottom: 30px;">
-        <p style="color: #00f0ff; font-weight: bold;">[ 단말기 및 번호 사용 규정 ]</p>
-        <ul style="color: #ccc; font-size: 0.9rem; padding-left: 20px;">
-            <li>본 번호(<span id="assigned-number" style="color:#fff; border-bottom:1px solid gold;">010-XXXX-XXXX</span>)는 WBPC 사무실에서 공식 개통하여 지급한 것입니다.</li>
-            <li>본 단말기를 통한 모든 데이터 통신 및 **실시간 GPS 위치 정보**는 지휘본부와 상시 공유됨에 동의합니다.</li>
-            <li>추후 제공될 <b>통신사 공식 유심 신청 서류</b>에 대한 전자 서명 권한을 시스템에 위임합니다.</li>
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 30px; border-radius: 15px; text-align: left; line-height: 2; border: 1px solid #1e3a5f;">
+        <p style="color: #00c3ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 15px;">[ 필수 확인 및 승낙 사항 ]</p>
+        <ul style="list-style: none; padding: 0; color: #ccc; font-size: 0.95rem;">
+            <li style="margin-bottom: 20px;">
+                <b>1. 실시간 위치확인:</b> 본인은 원활한 교육 관리와 보안 유지를 위해 시스템 접속 시 실시간 GPS **위치확인** 정보가 지휘본부에 공유됨을 승낙한다.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <b>2. 한국 유심 자동 동기화:</b> 한국 입국 후 사무실에서 보급한 유심으로 변경 시, 별도의 절차 없이 시스템상에서 <b>번호가 자동 갱신 및 위치확인 승낙이 유지</b>됨에 동의한다.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <b>3. 승낙 효력의 지속:</b> 단말기 식별 정보를 통해 번호 변경과 관계없이 <b>실시간 위치확인 승낙의 효력은 자동 승계</b>되며 교육 기간 내내 유효하다.
+            </li>
         </ul>
     </div>
 
-    <button onclick="activateAssignedSim()" style="width: 100%; padding: 25px; background: #00f0ff; color: #000; font-weight: bold; font-size: 1.2rem; border: none; border-radius: 15px; cursor: pointer;">
-        보급 번호 활성화 및 위치 추적 승낙
-    </button>
+    <div style="margin-top: 35px;">
+        <button onclick="activateLocationVerify()" style="width: 100%; padding: 25px; background: #00c3ff; color: #000; font-weight: bold; border: none; border-radius: 15px; cursor: pointer; font-size: 1.2rem; transition: 0.3s;">
+            실시간 위치확인 및 자동 갱신 시스템 승낙
+        </button>
+    </div>
 </div>
-
-<script>
-    function activateAssignedSim() {
-        alert("사령관님, 보급된 번호로 위치 추적이 동기화되었습니다. 신청서 양식 업데이트 시 즉시 서명 절차를 진행합니다.");
-        // 이후 메인 라운지 진입
-    }
-</script>
