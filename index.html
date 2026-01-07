@@ -1,97 +1,47 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WBPC GLOBAL HR - 통합 지휘 센터</title>
-    <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; overflow: hidden; }
-        #entry-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; background: radial-gradient(circle, #222 0%, #000 100%); transition: 0.8s; }
+<div id="grand-lecture-hall" style="position: relative; width: 100%; height: 88vh; background: #000; overflow: hidden; border-radius: 30px; border: 4px solid #444;">
 
-        /* 1. 럭셔리 3D 골드 로고 박스 - 입체감 강화 */
-        .gold-logo-box { 
-            width: 170px; height: 170px; border-radius: 50%; 
-            background: linear-gradient(145deg, #d4af37, #8a6d3b); 
-            border: 8px solid #ffd700; display: flex; justify-content: center; align-items: center; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.9), inset 0 0 25px #fff; margin-bottom: 30px; 
-            position: relative; overflow: hidden;
-        }
-        .gold-logo-box span { font-size: 2.5rem; font-weight: 900; color: #000; text-shadow: 1px 1px 2px rgba(255,255,255,0.3); z-index: 2; }
-        .gold-logo-box img { position: absolute; max-width: 85%; max-height: 85%; object-fit: contain; z-index: 1; display: none; }
-        .gold-logo-box img.loaded { display: block; }
-        .gold-logo-box img.loaded + span { display: none; }
+    <div id="hall-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(20,20,20,0.9) 100%), 
+        url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=2070'); 
+        background-size: cover; background-position: center; opacity: 0.2; filter: blur(2px);">
+    </div>
 
-        h2 { letter-spacing: 8px; font-weight: 300; margin-bottom: 50px; text-shadow: 0 0 15px gold; font-size: 1.5rem; color: #ffd700; }
+    <div id="student-crowd" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 40%; 
+        background: linear-gradient(to top, rgba(0,0,0,1) 20%, transparent 100%); z-index: 5; 
+        display: flex; justify-content: center; align-items: flex-end; padding-bottom: 20px;">
+        <div style="width: 90%; display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; opacity: 0.4;">
+            <div style="height: 40px; background: #222; border-radius: 50% 50% 0 0;"></div>
+            <div style="height: 45px; background: #1a1a1a; border-radius: 50% 50% 0 0;"></div>
+            </div>
+    </div>
 
-        /* 2. 3D 국가 버튼 - 황금빛 광택과 묵직한 그림자 */
-        .country-selector { display: flex; gap: 35px; margin-bottom: 60px; }
-        .btn-3d { 
-            width: 130px; height: 100px; border: none; border-radius: 15px; 
-            background: linear-gradient(145deg, #3a3a3a, #0a0a0a); 
-            box-shadow: 12px 12px 25px #000, -4px -4px 15px #444; 
-            cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s; 
-        }
-        .btn-3d .flag-text { font-size: 2.8rem; font-weight: bold; color: #ffd700; margin-bottom: 5px; text-shadow: 0 0 15px gold; }
-        .btn-3d .country-label { font-size: 0.9rem; color: #888; letter-spacing: 1px; }
+    <div id="grand-glass-board" style="position: absolute; top: 10%; left: 10%; width: 80%; height: 60%; 
+        background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px); border: 1px solid rgba(255,215,0,0.2); 
+        border-radius: 20px; z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: center;
+        box-shadow: 0 0 50px rgba(0,0,0,0.5), inset 0 0 30px rgba(212,175,55,0.1);">
         
-        .btn-3d:hover { transform: translateY(-12px); box-shadow: 0 0 40px gold; }
-        .btn-3d.selected { border: 3px solid #ffd700; background: #1a1a1a; box-shadow: 0 0 50px #ffd700, inset 0 0 20px gold; transform: scale(1.1); }
-        .btn-3d.selected .country-label { color: #ffd700; font-weight: bold; }
-
-        /* 3. 3D 입장 버튼 - 금속 캡슐 스타일 */
-        .enter-btn-3d { 
-            padding: 22px 100px; font-size: 1.6rem; font-weight: bold; letter-spacing: 10px; 
-            color: #333; border: none; border-radius: 50px; 
-            background: linear-gradient(145deg, #1a1a1a, #000); 
-            box-shadow: 10px 10px 30px #000, -3px -3px 15px #333; cursor: not-allowed; transition: 0.5s; 
-        }
-        .enter-btn-3d.ready { 
-            color: #ffd700; border: 2.5px solid #ffd700; cursor: pointer;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), 10px 10px 30px #000;
-        }
-        .enter-btn-3d.ready:hover { background: #ffd700; color: #000; box-shadow: 0 0 60px #ffd700; transform: scale(1.05); }
-
-        #main-hr { width: 100%; height: 100vh; display: none; flex-direction: column; justify-content: center; align-items: center; background: #000; }
-        .hr-box { border: 12px double #ffd700; padding: 70px; box-shadow: 0 0 70px gold; text-align: center; }
-    </style>
-</head>
-<body>
-    <div id="entry-screen">
-        <div class="gold-logo-box">
-            <img src="logo.png" id="main-logo" onload="this.classList.add('loaded')">
-            <span>WBPC</span>
-        </div>
-        <h2>접속할 국가 섹터를 선택하십시오</h2>
-        <div class="country-selector">
-            <button class="btn-3d" onclick="selectCountry(this, '대한민국')"><span class="flag-text">KR</span><span class="country-label">대한민국</span></button>
-            <button class="btn-3d" onclick="selectCountry(this, '태국')"><span class="flag-text">TH</span><span class="country-label">태국</span></button>
-            <button class="btn-3d" onclick="selectCountry(this, '라오스')"><span class="flag-text">LA</span><span class="country-label">라오스</span></button>
-            <button class="btn-3d" onclick="selectCountry(this, '미얀마')"><span class="flag-text">MM</span><span class="country-label">미얀마</span></button>
-        </div>
-        <button id="enter-button" class="enter-btn-3d" onclick="openGate()">SYSTEM ENTER</button>
-    </div>
-
-    <div id="main-hr">
-        <div class="hr-box">
-            <h1 style="font-size: 3.8rem; letter-spacing: 18px; color: #ffd700; text-shadow: 0 0 20px gold;">WBPC GLOBAL HR</h1>
-            <p id="sector-info" style="color: #fff; letter-spacing: 6px; font-size: 2.2rem; margin-top: 25px;"></p>
+        <div style="text-align: center;">
+            <p style="color: gold; font-family: monospace; letter-spacing: 5px; font-size: 1.2rem; margin-bottom: 20px;">[ WBPC GLOBAL STANDARD EDUCATION ]</p>
+            <h1 style="color: #fff; font-size: 4rem; font-weight: 900; line-height: 1.2; text-shadow: 0 0 20px rgba(255,255,255,0.5);">
+                제 1교시: <span style="color: #ffd700;">기초 한글 발음</span>
+            </h1>
+            <div style="margin-top: 40px; padding: 20px; border-top: 1px solid rgba(255,215,0,0.5); display: inline-block;">
+                <span style="font-size: 3rem; color: #fff; letter-spacing: 20px;">아 야 어 여 오 요</span>
+            </div>
         </div>
     </div>
 
-    <script>
-        let selectedSector = "";
-        function selectCountry(element, country) {
-            document.querySelectorAll('.btn-3d').forEach(btn => btn.classList.remove('selected'));
-            element.classList.add('selected');
-            selectedSector = country;
-            document.getElementById('enter-button').classList.add('ready');
-        }
-        function openGate() {
-            if(!selectedSector) return;
-            document.getElementById('entry-screen').style.opacity = '0';
-            document.getElementById('sector-info').innerText = selectedSector + " STRATEGIC COMMAND";
-            setTimeout(() => { document.getElementById('entry-screen').style.display = 'none'; document.getElementById('main-hr').style.display = 'flex'; }, 800);
-        }
-    </script>
-</body>
-</html>
+    <div id="professor-area" style="position: absolute; bottom: 50px; right: 50px; z-index: 20; text-align: center;">
+        <div style="width: 220px; aspect-ratio: 1; border-radius: 50%; border: 4px solid gold; overflow: hidden; box-shadow: 0 0 30px gold;">
+             <div style="width: 100%; height: 100%; background: #222; display: flex; align-items: center; justify-content: center; color: gold;">PROFESSOR</div>
+        </div>
+        <div style="margin-top: 15px; background: gold; color: #000; padding: 5px 20px; border-radius: 20px; font-weight: bold;">
+            COMMANDER ELENA
+        </div>
+    </div>
+
+    <div style="position: absolute; top: 40px; left: 40px; z-index: 30; font-family: 'Courier New', monospace;">
+        <div style="color: #0f0; font-size: 1rem; margin-bottom: 5px;">● AI ATTENTION SCANNER</div>
+        <div style="color: red; font-size: 1.5rem; font-weight: bold;">STRIKE: 0 / 3</div>
+    </div>
+</div>
