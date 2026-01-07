@@ -1,47 +1,40 @@
-<div id="worker-main-lounge" style="width: 100%; min-height: 100vh; background: radial-gradient(circle at top, #0a0f1a 0%, #000 100%); color: #fff; padding: 40px; font-family: 'Pretendard', sans-serif;">
+<div id="elena-inspection-room" style="width: 100%; height: 100vh; background: #000; position: relative; overflow: hidden; font-family: 'Courier New', Courier, monospace;">
     
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 195, 255, 0.3); padding-bottom: 20px; margin-bottom: 40px;">
-        <div>
-            <h4 style="color: #00c3ff; margin: 0; letter-spacing: 2px;">WBPC VERIFIED WORKER</h4>
-            <h1 style="margin: 10px 0 0 0; font-size: 2.2rem;">Welcome, <span style="text-shadow: 0 0 15px #00c3ff;">KIM CHUL-SU</span> 요원</h1>
-        </div>
-        <div style="text-align: right;">
-            <div style="display: inline-block; padding: 8px 15px; background: rgba(0, 255, 0, 0.1); border: 1px solid #0f0; border-radius: 20px; color: #0f0; font-size: 0.8rem; font-weight: bold; animation: pulse 2s infinite;">
-                ● 실시간 위치확인 가동 중
-            </div>
-            <p style="margin-top: 10px; font-size: 0.8rem; color: #888;">지급 유심 번호: 010-XXXX-5582</p>
+    <div id="main-stream" style="width: 85%; height: 70%; margin: 50px auto; background: #050505; border: 1px solid #222; position: relative; display: flex; justify-content: center; align-items: center; box-shadow: inset 0 0 50px #000;">
+        <div style="text-align: center;">
+            <div style="font-size: 1.5rem; color: #333; letter-spacing: 10px; margin-bottom: 20px;">[ LECTURE CONTENT STREAMING ]</div>
+            <div style="width: 300px; height: 2px; background: linear-gradient(90deg, transparent, #00c3ff, transparent); margin: 0 auto;"></div>
         </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px;">
-        
-        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid #333; border-radius: 25px; padding: 40px; text-align: center;">
-            <p style="color: #888; margin-bottom: 20px;">총 30일 공정 이수율</p>
-            <div style="position: relative; width: 180px; height: 180px; margin: 0 auto;">
-                <div style="width: 100%; height: 100%; border-radius: 50%; border: 10px solid #1a1a1a; border-top: 10px solid gold; display: flex; justify-content: center; align-items: center;">
-                    <span style="font-size: 2.5rem; font-weight: bold; color: gold;">3%</span>
-                </div>
-            </div>
-            <p style="margin-top: 25px; color: #555; font-size: 0.9rem;">1일차 교육 진행 중 (40/140분)</p>
+    <div id="elena-eye" style="position: absolute; top: 30px; right: 30px; width: 220px; background: rgba(0, 10, 20, 0.9); border: 1px solid gold; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);">
+        <div style="color: gold; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 10px;">AI INSPECTOR ELENA</div>
+        <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid gold; margin: 0 auto; overflow: hidden; background: #111;">
+             <div style="width: 20px; height: 20px; background: gold; border-radius: 50%; margin: 30px auto; filter: blur(2px); animation: moveEye 3s infinite;"></div>
+        </div>
+        <div style="margin-top: 15px; font-size: 0.8rem; color: #0f0;">STATUS: EYE-TRACKING...</div>
+        <div id="focus-timer" style="font-size: 0.7rem; color: #555; margin-top: 5px;">시선 이탈 감지: 0.0s</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0; width: 100%; height: 120px; background: rgba(10, 10, 10, 0.95); border-top: 2px solid gold; display: flex; justify-content: space-around; align-items: center; padding: 0 50px;">
+        <div style="text-align: center;">
+            <p style="color: #666; font-size: 0.7rem; margin: 0;">CURRENT PROGRESS</p>
+            <p style="color: gold; font-size: 1.8rem; font-weight: bold; margin: 5px 0;">42 : 140 <span style="font-size: 0.8rem;">MIN</span></p>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-            <div onclick="goToClass()" style="background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%); border: 1px solid #00c3ff; border-radius: 20px; padding: 35px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div style="position: relative; z-index: 2;">
-                    <h2 style="margin: 0; color: #fff;">01. 한글 기초 및 현장 실무</h2>
-                    <p style="margin: 10px 0 0 0; color: #00c3ff;">[AI 엘레나 감찰 모드 가동]</p>
-                    <div style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">남은 시간: 100분</div>
-                </div>
-                <div style="position: absolute; right: -20px; bottom: -20px; font-size: 8rem; opacity: 0.1; color: #fff;">🇰🇷</div>
-            </div>
+        <div style="text-align: center; padding: 0 40px; border-left: 1px solid #222; border-right: 1px solid #222;">
+            <p style="color: #666; font-size: 0.7rem; margin: 0;">STRIKE SYSTEM</p>
+            <p style="color: #ff4444; font-size: 1.8rem; font-weight: bold; margin: 5px 0;">[ X ] [ _ ] [ _ ]</p>
+            <p style="color: #444; font-size: 0.6rem;">3회 위반 시 당일 공정 무효</p>
+        </div>
 
-            <div style="background: rgba(0,0,0,0.5); border: 1px solid #222; border-radius: 20px; padding: 35px; opacity: 0.5; cursor: not-allowed; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h2 style="margin: 0; color: #444;">02. 프리미엄 직무 심화</h2>
-                    <p style="margin: 10px 0 0 0; color: #333;">기초 공정 완료 후 잠금 해제됩니다.</p>
-                </div>
-                <div style="font-size: 2rem;">🔒</div>
-            </div>
+        <div style="text-align: left;">
+            <p style="color: #0f0; font-size: 0.7rem; margin: 0;">LOCATION VERIFICATION</p>
+            <p style="color: #ccc; font-size: 0.9rem; margin: 5px 0;">SEOUL, SOUTH KOREA (GPS ACTIVE)</p>
         </div>
     </div>
+
+    <style>
+        @keyframes moveEye { 0%, 100% { transform: translateX(-15px); } 50% { transform: translateX(15px); } }
+    </style>
 </div>
