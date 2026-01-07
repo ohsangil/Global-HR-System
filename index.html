@@ -1,40 +1,52 @@
-<div id="elena-inspection-room" style="width: 100%; height: 100vh; background: #000; position: relative; overflow: hidden; font-family: 'Courier New', Courier, monospace;">
+<div id="commander-final-ops" style="width: 100%; min-height: 100vh; background: #000; color: #fff; padding: 40px; border: 4px solid gold;">
     
-    <div id="main-stream" style="width: 85%; height: 70%; margin: 50px auto; background: #050505; border: 1px solid #222; position: relative; display: flex; justify-content: center; align-items: center; box-shadow: inset 0 0 50px #000;">
-        <div style="text-align: center;">
-            <div style="font-size: 1.5rem; color: #333; letter-spacing: 10px; margin-bottom: 20px;">[ LECTURE CONTENT STREAMING ]</div>
-            <div style="width: 300px; height: 2px; background: linear-gradient(90deg, transparent, #00c3ff, transparent); margin: 0 auto;"></div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px;">
+        <div>
+            <h1 style="color: gold; font-size: 2.5rem; letter-spacing: 5px; margin: 0;">WBPC TOTAL COMMAND</h1>
+            <p style="color: #0f0; margin: 10px 0;">● ALL SYSTEMS OPERATIONAL | AI ELENA ONLINE</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border: 1px solid #333; border-radius: 10px; text-align: right;">
+            <span style="color: #888; font-size: 0.8rem;">TOTAL DEPLOYED</span>
+            <div style="font-size: 2rem; font-weight: bold; color: gold;">1,284 명</div>
         </div>
     </div>
 
-    <div id="elena-eye" style="position: absolute; top: 30px; right: 30px; width: 220px; background: rgba(0, 10, 20, 0.9); border: 1px solid gold; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);">
-        <div style="color: gold; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 10px;">AI INSPECTOR ELENA</div>
-        <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid gold; margin: 0 auto; overflow: hidden; background: #111;">
-             <div style="width: 20px; height: 20px; background: gold; border-radius: 50%; margin: 30px auto; filter: blur(2px); animation: moveEye 3s infinite;"></div>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+        
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid #222; border-radius: 20px; padding: 30px;">
+            <h3 style="color: #00c3ff; margin-bottom: 25px;">실시간 현장 인력 리포트 (GPS 연동)</h3>
+            <table style="width: 100%; border-collapse: collapse; color: #ccc; font-size: 0.9rem;">
+                <tr style="border-bottom: 2px solid #333; text-align: left;">
+                    <th style="padding: 15px;">요원명</th>
+                    <th>상태</th>
+                    <th>현재 위치</th>
+                    <th>보급 번호</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #222;">
+                    <td style="padding: 15px; color: #fff;">김철수 (태국)</td>
+                    <td><span style="color: #0f0;">교육 완료</span></td>
+                    <td>경기도 화성시 ○○공장</td>
+                    <td>010-1234-5678</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #222;">
+                    <td style="padding: 15px; color: #fff;">Somchai (태국)</td>
+                    <td><span style="color: gold;">교육 중 (80%)</span></td>
+                    <td>인천광역시 서구 ○○공단</td>
+                    <td>010-9876-5432</td>
+                </tr>
+            </table>
         </div>
-        <div style="margin-top: 15px; font-size: 0.8rem; color: #0f0;">STATUS: EYE-TRACKING...</div>
-        <div id="focus-timer" style="font-size: 0.7rem; color: #555; margin-top: 5px;">시선 이탈 감지: 0.0s</div>
+
+        <div style="background: rgba(255, 0, 0, 0.05); border: 1px solid #ff4444; border-radius: 20px; padding: 30px;">
+            <h3 style="color: #ff4444; margin-bottom: 25px;">보안 및 이탈 경고</h3>
+            <div style="padding: 15px; background: rgba(0,0,0,0.5); border-radius: 10px; margin-bottom: 15px;">
+                <p style="color: #ff4444; font-size: 0.8rem; margin: 0;">[경고] 시선 이탈 발생</p>
+                <p style="margin: 5px 0; font-size: 0.9rem;">이영희 (베트남) - 스트라이크 2회</p>
+            </div>
+            <div style="padding: 15px; background: rgba(0,0,0,0.5); border-radius: 10px;">
+                <p style="color: gold; font-size: 0.8rem; margin: 0;">[알림] 위치확인 승낙 완료</p>
+                <p style="margin: 5px 0; font-size: 0.9rem;">박민수 (신규 입국자)</p>
+            </div>
+        </div>
     </div>
-
-    <div style="position: absolute; bottom: 0; width: 100%; height: 120px; background: rgba(10, 10, 10, 0.95); border-top: 2px solid gold; display: flex; justify-content: space-around; align-items: center; padding: 0 50px;">
-        <div style="text-align: center;">
-            <p style="color: #666; font-size: 0.7rem; margin: 0;">CURRENT PROGRESS</p>
-            <p style="color: gold; font-size: 1.8rem; font-weight: bold; margin: 5px 0;">42 : 140 <span style="font-size: 0.8rem;">MIN</span></p>
-        </div>
-
-        <div style="text-align: center; padding: 0 40px; border-left: 1px solid #222; border-right: 1px solid #222;">
-            <p style="color: #666; font-size: 0.7rem; margin: 0;">STRIKE SYSTEM</p>
-            <p style="color: #ff4444; font-size: 1.8rem; font-weight: bold; margin: 5px 0;">[ X ] [ _ ] [ _ ]</p>
-            <p style="color: #444; font-size: 0.6rem;">3회 위반 시 당일 공정 무효</p>
-        </div>
-
-        <div style="text-align: left;">
-            <p style="color: #0f0; font-size: 0.7rem; margin: 0;">LOCATION VERIFICATION</p>
-            <p style="color: #ccc; font-size: 0.9rem; margin: 5px 0;">SEOUL, SOUTH KOREA (GPS ACTIVE)</p>
-        </div>
-    </div>
-
-    <style>
-        @keyframes moveEye { 0%, 100% { transform: translateX(-15px); } 50% { transform: translateX(15px); } }
-    </style>
 </div>
