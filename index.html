@@ -1,47 +1,57 @@
-<div id="content-master-control" style="width: 100%; text-align: center; color: #fff;">
+<div id="cycle-controller" style="width: 100%; padding: 30px; background: rgba(0,0,0,0.5); border-radius: 20px; border: 1px dashed gold;">
     
-    <div style="margin-bottom: 30px;">
-        <span style="color: #888; font-size: 0.9rem; letter-spacing: 2px;">COURSE PROGRESS</span>
-        <div style="width: 60%; height: 4px; background: #222; margin: 10px auto; border-radius: 2px;">
-            <div id="progress-indicator" style="width: 15%; height: 100%; background: gold; box-shadow: 0 0 10px gold; transition: 1s;"></div>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 50px;">
+        <div id="current-mode-box" style="text-align: center; padding: 20px 50px; border-radius: 15px; background: linear-gradient(145deg, #111, #000); border: 2px solid gold; min-width: 300px;">
+            <h4 id="mode-label" style="color: gold; margin: 0; letter-spacing: 5px;">현재 상태: 교육 중</h4>
+            <div id="timer-display" style="font-size: 3.5rem; font-weight: 900; color: #fff; font-family: 'Courier New', monospace; margin-top: 10px;">20:00</div>
+        </div>
+
+        <div style="color: #888; font-size: 1rem;">
+            NEXT PHASE: <span style="color: #fff;">10분 휴식 (자동 전환)</span><br>
+            <p style="margin-top: 5px; font-size: 0.8rem;">* 10초 감시 시스템 상시 가동 중</p>
         </div>
     </div>
 
-    <div id="lecture-card" style="padding: 40px; border: 1px solid rgba(255,215,0,0.2); background: rgba(212,175,55,0.02); border-radius: 15px;">
-        <h3 id="step-title" style="color: #888; font-size: 1.2rem;">STEP 01: 모음의 이해</h3>
-        <div id="main-display" style="font-size: 6rem; font-weight: 900; margin: 40px 0; text-shadow: 0 0 30px gold;">
-            ㅏ ㅑ ㅓ ㅕ
-        </div>
-        <div id="sub-display" style="font-size: 2rem; color: #ffd700; opacity: 0.7;">
-            [ a / ya / eo / yeo ]
-        </div>
-    </div>
-
-    <div style="margin-top: 50px; display: flex; justify-content: center; gap: 30px;">
-        <button onclick="prevStep()" style="padding: 10px 30px; background: none; border: 1px solid #444; color: #444; cursor: pointer;">PREV</button>
-        <button onclick="nextStep()" style="padding: 10px 30px; background: gold; border: none; color: #000; font-weight: bold; cursor: pointer; border-radius: 5px;">NEXT STEP</button>
+    <div style="width: 100%; height: 8px; background: #222; margin-top: 30px; border-radius: 4px; overflow: hidden;">
+        <div id="cycle-progress" style="width: 100%; height: 100%; background: gold; transition: 1s linear;"></div>
     </div>
 </div>
 
 <script>
-    const steps = [
-        {title: "STEP 01: 모음의 이해", main: "ㅏ ㅑ ㅓ ㅕ", sub: "[ a / ya / eo / yeo ]", prog: "20%"},
-        {title: "STEP 02: 자음의 이해", main: "ㄱ ㄴ ㄷ ㄹ", sub: "[ g / n / d / r ]", prog: "40%"},
-        {title: "STEP 03: 결합의 기초", main: "가 나 다 라", sub: "[ ga / na / da / ra ]", prog: "60%"}
-    ];
-    let currentStep = 0;
+    let timeLeft = 1200; // 20분 (초 단위)
+    let isEducation = true;
 
-    function nextStep() {
-        if(currentStep < steps.length - 1) {
-            currentStep++;
-            updateUI();
+    const timerInt = setInterval(() => {
+        timeLeft--;
+        updateTimerUI();
+
+        if (timeLeft <= 0) {
+            switchCycle();
         }
+    }, 1000);
+
+    function updateTimerUI() {
+        const min = Math.floor(timeLeft / 60);
+        const sec = timeLeft % 60;
+        document.getElementById('timer-display').innerText = 
+            `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+        
+        // 게이지 줄어들기
+        const percent = (timeLeft / (isEducation ? 1200 : 600)) * 100;
+        document.getElementById('cycle-progress').style.width = percent + "%";
     }
 
-    function updateUI() {
-        document.getElementById('step-title').innerText = steps[currentStep].title;
-        document.getElementById('main-display').innerText = steps[currentStep].main;
-        document.getElementById('sub-display').innerText = steps[currentStep].sub;
-        document.getElementById('progress-indicator').style.width = steps[currentStep].prog;
+    function switchCycle() {
+        isEducation = !isEducation;
+        if (isEducation) {
+            timeLeft = 1200; // 20분 교육
+            document.getElementById('mode-label').innerText = "현재 상태: 교육 중";
+            document.getElementById('mode-label').style.color = "gold";
+        } else {
+            timeLeft = 600; // 10분 휴식
+            document.getElementById('mode-label').innerText = "현재 상태: 휴식 중";
+            document.getElementById('mode-label').style.color = "#0f0";
+            alert("20분 교육 종료. 10분간 휴식하십시오.");
+        }
     }
 </script>
