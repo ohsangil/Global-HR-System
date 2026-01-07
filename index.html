@@ -1,62 +1,41 @@
-<div id="commander-dashboard" style="width: 100%; min-height: 100vh; background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; padding: 30px;">
-    
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid gold; padding-bottom: 20px; margin-bottom: 30px;">
-        <div>
-            <h1 style="color: gold; margin: 0; letter-spacing: 5px;">WBPC GLOBAL COMMAND</h1>
-            <p style="color: #888; margin: 5px 0 0 0;">2026-01-07 22:15:52 | 사령관님, 현재 시스템이 정상 가동 중입니다.</p>
-        </div>
-        <div style="text-align: right; background: rgba(212,175,55,0.1); padding: 15px 30px; border-radius: 10px; border: 1px solid gold;">
-            <span style="color: gold; font-size: 0.8rem;">TOTAL ACTIVE WORKERS</span>
-            <div style="font-size: 1.8rem; font-weight: bold;">1,422 명</div>
-        </div>
-    </div>
+/**
+ * WBPC GLOBAL COMMAND CENTER 
+ * INTEGRATED SYSTEM CONTROLLER v1.0
+ */
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 25px;">
-        
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; border-radius: 20px; padding: 25px;">
-            <h3 style="color: #00c3ff; border-left: 4px solid #00c3ff; padding-left: 10px;">명단 대조 및 승인 현황</h3>
-            <div style="margin-top: 20px;">
-                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222;">
-                    <span>🇰🇷 김철수 (태국 송출)</span>
-                    <span style="color: #0f0;">[승인완료]</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222;">
-                    <span>🇹🇭 Somchai (베트남 송출)</span>
-                    <span style="color: #ff4444;">[서류미비]</span>
-                </div>
-                <p style="font-size: 0.8rem; color: #555; margin-top: 15px;">* 엘레나가 송출업체 사진과 99% 매칭 확인</p>
-            </div>
-        </div>
+const WBPC_SYSTEM = {
+    // 1. 보안 인트로 가동 (로고 클릭 입장)
+    initGate: function() {
+        console.log("WBPC 정문 시스템 활성화...");
+        // 로고 애니메이션 및 국가 선택 로직 실행
+    },
 
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid #ff4444; border-radius: 20px; padding: 25px;">
-            <h3 style="color: #ff4444; border-left: 4px solid #ff4444; padding-left: 10px;">보안 및 위치 감시</h3>
-            <div style="height: 150px; background: #000; margin-top: 20px; border-radius: 10px; display: flex; justify-content: center; align-items: center; color: #444;">
-                [ WORLD MAP GPS TRACKING ]
-            </div>
-            <div style="margin-top: 15px; font-size: 0.85rem; color: #aaa;">
-                <p>● 유심 교체 후 번호 자동 갱신: 12건</p>
-                <p>● 비인가 지역 접속 시도: <span style="color: #ff4444;">0건</span></p>
-            </div>
-        </div>
+    // 2. 신원 검증 파이프라인 (명단 사진 대조)
+    verifyWorker: function(rosterData) {
+        console.log("엘레나 AI: 명단 사진 스캔 중...");
+        // 사령관이 찍어 올린 명단과 실시간 대조
+    },
 
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid gold; border-radius: 20px; padding: 25px;">
-            <h3 style="color: gold; border-left: 4px solid gold; padding-left: 10px;">140분 교육 집중도</h3>
-            <div style="margin-top: 20px;">
-                <p style="font-size: 0.9rem;">현재 실시간 스트라이크 발생</p>
-                <div style="background: rgba(255, 68, 68, 0.1); padding: 10px; border-radius: 5px; color: #ff4444; font-size: 0.8rem;">
-                    경고: 이영희(근로자) - 시선 이탈 8초 경과
-                </div>
-                <div style="margin-top: 20px;">
-                    <span style="font-size: 0.8rem; color: #888;">오늘의 완수 인원:</span>
-                    <span style="font-size: 1.2rem; color: gold; font-weight: bold; margin-left: 10px;">892명</span>
-                </div>
-            </div>
-        </div>
+    // 3. 서류 승낙 및 전자서명 동의
+    handleLegalAgreement: function() {
+        console.log("민·형사 책임 NDA 및 위치 추적 동의 확인...");
+        // 서명 데이터 암호화 보관
+    },
 
-    </div>
+    // 4. 140분 교육 공정 감찰
+    startEducationProcess: function() {
+        console.log("140분 집중력 감시 모드 시작 (Strike System Active)");
+        // 시선 이탈 감지 및 스트라이크 카운트 가동
+    },
 
-    <div style="margin-top: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="color: #ccc;">전자 서약서(NDA) 및 민·형사 책임 확약서 보관소 (총 12,401건)</span>
-        <button style="background: gold; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">서류 열람하기</button>
-    </div>
-</div>
+    // 5. 수료 및 프리미엄 개방
+    grantPremiumAccess: function() {
+        console.log("축하합니다. 정예 요원 인증 완료. 프리미엄 섹터를 개방합니다.");
+        // 디지털 수료증 발행 및 잠금 해제
+    }
+};
+
+// 시스템 전체 가동 명령
+window.addEventListener('DOMContentLoaded', () => {
+    WBPC_SYSTEM.initGate();
+});
