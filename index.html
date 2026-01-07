@@ -1,41 +1,27 @@
-/**
- * WBPC GLOBAL COMMAND CENTER 
- * INTEGRATED SYSTEM CONTROLLER v1.0
- */
+<div id="issued-sim-activation" style="background: rgba(10, 20, 40, 0.98); border: 2px solid #00f0ff; padding: 50px; border-radius: 30px; color: #fff; text-align: center;">
+    
+    <div style="margin-bottom: 30px;">
+        <span style="background: #00f0ff; color: #000; padding: 5px 15px; font-weight: bold; border-radius: 5px;">WBPC ISSUED DEVICE</span>
+        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">보급 유심 및 단말기 활성화</h2>
+    </div>
 
-const WBPC_SYSTEM = {
-    // 1. 보안 인트로 가동 (로고 클릭 입장)
-    initGate: function() {
-        console.log("WBPC 정문 시스템 활성화...");
-        // 로고 애니메이션 및 국가 선택 로직 실행
-    },
+    <div style="background: rgba(0, 195, 255, 0.05); padding: 30px; border-radius: 15px; text-align: left; line-height: 1.9; border: 1px solid #1e3a5f; margin-bottom: 30px;">
+        <p style="color: #00f0ff; font-weight: bold;">[ 단말기 및 번호 사용 규정 ]</p>
+        <ul style="color: #ccc; font-size: 0.9rem; padding-left: 20px;">
+            <li>본 번호(<span id="assigned-number" style="color:#fff; border-bottom:1px solid gold;">010-XXXX-XXXX</span>)는 WBPC 사무실에서 공식 개통하여 지급한 것입니다.</li>
+            <li>본 단말기를 통한 모든 데이터 통신 및 **실시간 GPS 위치 정보**는 지휘본부와 상시 공유됨에 동의합니다.</li>
+            <li>추후 제공될 <b>통신사 공식 유심 신청 서류</b>에 대한 전자 서명 권한을 시스템에 위임합니다.</li>
+        </ul>
+    </div>
 
-    // 2. 신원 검증 파이프라인 (명단 사진 대조)
-    verifyWorker: function(rosterData) {
-        console.log("엘레나 AI: 명단 사진 스캔 중...");
-        // 사령관이 찍어 올린 명단과 실시간 대조
-    },
+    <button onclick="activateAssignedSim()" style="width: 100%; padding: 25px; background: #00f0ff; color: #000; font-weight: bold; font-size: 1.2rem; border: none; border-radius: 15px; cursor: pointer;">
+        보급 번호 활성화 및 위치 추적 승낙
+    </button>
+</div>
 
-    // 3. 서류 승낙 및 전자서명 동의
-    handleLegalAgreement: function() {
-        console.log("민·형사 책임 NDA 및 위치 추적 동의 확인...");
-        // 서명 데이터 암호화 보관
-    },
-
-    // 4. 140분 교육 공정 감찰
-    startEducationProcess: function() {
-        console.log("140분 집중력 감시 모드 시작 (Strike System Active)");
-        // 시선 이탈 감지 및 스트라이크 카운트 가동
-    },
-
-    // 5. 수료 및 프리미엄 개방
-    grantPremiumAccess: function() {
-        console.log("축하합니다. 정예 요원 인증 완료. 프리미엄 섹터를 개방합니다.");
-        // 디지털 수료증 발행 및 잠금 해제
+<script>
+    function activateAssignedSim() {
+        alert("사령관님, 보급된 번호로 위치 추적이 동기화되었습니다. 신청서 양식 업데이트 시 즉시 서명 절차를 진행합니다.");
+        // 이후 메인 라운지 진입
     }
-};
-
-// 시스템 전체 가동 명령
-window.addEventListener('DOMContentLoaded', () => {
-    WBPC_SYSTEM.initGate();
-});
+</script>
