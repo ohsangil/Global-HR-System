@@ -2,30 +2,21 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WBPC GLOBAL HQ - 통합 지휘 센터</title>
     <style>
-        body { margin: 0; background: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; overflow: hidden; }
-        .main-container { height: 100vh; display: flex; flex-direction: column; border: 8px double #ffd700; box-sizing: border-box; }
-        
-        /* [본사의 위엄] 상단 지휘바 */
-        .hq-header { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(to bottom, #1a1a1a, #000); border-bottom: 2px solid #ffd700; }
-        .hq-header h1 { font-size: 3rem; letter-spacing: 12px; margin: 0; text-shadow: 0 0 20px gold; }
-        .hq-header p { font-size: 1.2rem; color: #fff; letter-spacing: 3px; margin-top: 5px; }
-
-        /* [통합 관제 구역] */
-        .control-room { flex: 4; position: relative; display: flex; justify-content: center; align-items: center; background: radial-gradient(circle, #0d1a2a 0%, #000 100%); }
-        
-        /* 중앙: WBPC 글로벌 본사 (Golden Core) */
-        .core-hq { position: relative; width: 120px; height: 120px; background: gold; border-radius: 50%; box-shadow: 0 0 60px gold; display: flex; justify-content: center; align-items: center; color: #000; font-weight: bold; font-size: 1.2rem; z-index: 10; }
-        
-        /* 핵심 거점: 영암 (본사와 연결된 빛나는 지점) */
-        .branch-yeongam { position: absolute; right: 20%; top: 40%; width: 70px; height: 70px; border: 2px solid #00ccff; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #00ccff; font-size: 1rem; animation: pulse 2.5s infinite; }
-        
-        /* 지휘 통제 연결선 */
-        .link-line { position: absolute; width: 25%; height: 2px; background: linear-gradient(to right, gold, #00ccff); left: 55%; top: 50%; transform: rotate(-12deg); opacity: 0.4; }
-
-        /* [하단 시스템 로그] */
-        .system-footer { flex: 0.8; padding: 20px; background: rgba(0,0,0,0.9); border-top: 1px solid #333; font-family: monospace; font-size: 0.9rem; color: #00ff00; }
-
-        @keyframes pulse { 
-            0% { box-shadow: 0 0 5px #00ccff; border-color: #
+        body { margin: 0; padding: 0; background-color: #000; color: #ffd700; font-family: 'Malgun Gothic', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        .hq-container { text-align: center; border: 5px double #ffd700; padding: 50px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
+        h1 { font-size: 3.5rem; letter-spacing: 15px; margin: 0; text-shadow: 0 0 20px #ffd700; }
+        p { font-size: 1.5rem; color: #fff; margin-top: 20px; letter-spacing: 5px; }
+        .status { margin-top: 40px; font-family: monospace; color: #00ff00; border-top: 1px solid #333; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="hq-container">
+        <h1>WBPC GLOBAL HQ</h1>
+        <p>통합 전략 지휘 통제소 가동 중</p>
+        <div class="status">> SYSTEM STATUS: OPTIMAL<br>> COMMANDER ACCESS GRANTED.</div>
+    </div>
+</body>
+</html>
