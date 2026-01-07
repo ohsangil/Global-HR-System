@@ -1,29 +1,47 @@
-<div id="lecture-engine" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center;">
+<div id="content-master-control" style="width: 100%; text-align: center; color: #fff;">
     
-    <div style="width: 100%; display: flex; justify-content: space-between; padding: 20px 40px; background: rgba(255,215,0,0.1); border-bottom: 1px solid gold;">
-        <div style="color: gold; font-weight: bold; letter-spacing: 3px;">PHASE: KOREAN LANGUAGE - DAY 01</div>
-        <div id="main-timer" style="color: #fff; font-size: 1.5rem; font-family: monospace; font-weight: bold;">남은 시간 20:00</div>
-        <div style="color: #0f0;">● LIVE STREAMING</div>
-    </div>
-
-    <div id="active-board" style="flex: 1; width: 85%; margin-top: 30px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 2px solid rgba(212,175,55,0.3); border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
-        
-        <div id="content-slider" style="text-align: center;">
-            <h1 style="color: #fff; font-size: 5rem; margin: 0; letter-spacing: 20px; text-shadow: 0 0 30px gold;">가 나 다 라</h1>
-            <p style="color: #ffd700; font-size: 2rem; margin-top: 20px; opacity: 0.8;">Ga Na Da Ra</p>
-        </div>
-
-        <div id="alert-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,0,0,0.4); z-index: 100; border-radius: 20px; justify-content: center; align-items: center; flex-direction: column;">
-            <h1 style="color: #fff; font-size: 4rem; text-shadow: 0 0 20px #000;">집중하십시오!</h1>
-            <p style="color: #fff; font-size: 1.5rem;">시선이 감지되지 않습니다. (경고 누적 시 강좌 초기화)</p>
+    <div style="margin-bottom: 30px;">
+        <span style="color: #888; font-size: 0.9rem; letter-spacing: 2px;">COURSE PROGRESS</span>
+        <div style="width: 60%; height: 4px; background: #222; margin: 10px auto; border-radius: 2px;">
+            <div id="progress-indicator" style="width: 15%; height: 100%; background: gold; box-shadow: 0 0 10px gold; transition: 1s;"></div>
         </div>
     </div>
 
-    <div style="width: 90%; height: 60px; margin: 30px; background: #111; border-radius: 30px; border: 1px solid #333; overflow: hidden; display: flex; align-items: center; padding: 0 20px;">
-        <span style="color: #888; font-size: 0.8rem; margin-right: 20px;">STUDENT ATTENTION RATE</span>
-        <div style="flex: 1; height: 10px; background: #222; border-radius: 5px;">
-            <div style="width: 92%; height: 100%; background: linear-gradient(90deg, gold, orange); box-shadow: 0 0 10px gold;"></div>
+    <div id="lecture-card" style="padding: 40px; border: 1px solid rgba(255,215,0,0.2); background: rgba(212,175,55,0.02); border-radius: 15px;">
+        <h3 id="step-title" style="color: #888; font-size: 1.2rem;">STEP 01: 모음의 이해</h3>
+        <div id="main-display" style="font-size: 6rem; font-weight: 900; margin: 40px 0; text-shadow: 0 0 30px gold;">
+            ㅏ ㅑ ㅓ ㅕ
         </div>
-        <span style="color: gold; margin-left: 20px; font-weight: bold;">92%</span>
+        <div id="sub-display" style="font-size: 2rem; color: #ffd700; opacity: 0.7;">
+            [ a / ya / eo / yeo ]
+        </div>
+    </div>
+
+    <div style="margin-top: 50px; display: flex; justify-content: center; gap: 30px;">
+        <button onclick="prevStep()" style="padding: 10px 30px; background: none; border: 1px solid #444; color: #444; cursor: pointer;">PREV</button>
+        <button onclick="nextStep()" style="padding: 10px 30px; background: gold; border: none; color: #000; font-weight: bold; cursor: pointer; border-radius: 5px;">NEXT STEP</button>
     </div>
 </div>
+
+<script>
+    const steps = [
+        {title: "STEP 01: 모음의 이해", main: "ㅏ ㅑ ㅓ ㅕ", sub: "[ a / ya / eo / yeo ]", prog: "20%"},
+        {title: "STEP 02: 자음의 이해", main: "ㄱ ㄴ ㄷ ㄹ", sub: "[ g / n / d / r ]", prog: "40%"},
+        {title: "STEP 03: 결합의 기초", main: "가 나 다 라", sub: "[ ga / na / da / ra ]", prog: "60%"}
+    ];
+    let currentStep = 0;
+
+    function nextStep() {
+        if(currentStep < steps.length - 1) {
+            currentStep++;
+            updateUI();
+        }
+    }
+
+    function updateUI() {
+        document.getElementById('step-title').innerText = steps[currentStep].title;
+        document.getElementById('main-display').innerText = steps[currentStep].main;
+        document.getElementById('sub-display').innerText = steps[currentStep].sub;
+        document.getElementById('progress-indicator').style.width = steps[currentStep].prog;
+    }
+</script>
