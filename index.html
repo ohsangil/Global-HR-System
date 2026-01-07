@@ -1,28 +1,38 @@
-<div id="registration-step-2" style="display: none; background: rgba(0, 0, 0, 0.95); border: 2px solid #ff4444; padding: 50px; border-radius: 30px; box-shadow: 0 0 60px rgba(255, 68, 68, 0.3);">
+<div id="registration-step-3" style="display: none; background: rgba(5, 15, 30, 0.95); border: 2px solid #00c3ff; padding: 50px; border-radius: 30px; box-shadow: 0 0 50px rgba(0, 195, 255, 0.2);">
     
-    <div style="text-align: center; margin-bottom: 30px;">
-        <span style="color: #ff4444; font-weight: bold; border: 1px solid #ff4444; padding: 5px 15px; font-size: 0.8rem;">TOP SECRET / LEGAL NOTICE</span>
-        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">비밀유지 및 법적 책임 서약</h2>
+    <div style="text-align: center; margin-bottom: 35px;">
+        <span style="color: #00c3ff; font-weight: bold; border: 1px solid #00c3ff; padding: 5px 15px; font-size: 0.8rem;">ADMINISTRATIVE & TRACKING</span>
+        <h2 style="color: #fff; letter-spacing: 5px; margin-top: 15px;">위치 및 행정 정보 활용 동의</h2>
     </div>
 
-    <div id="nda-text-area" style="height: 300px; overflow-y: scroll; background: #0a0a0a; padding: 25px; border-radius: 10px; text-align: left; line-height: 1.8; border: 1px solid #333;">
-        <p style="color: #ff4444; font-weight: bold;">[민·형사상 처벌 및 손해배상 조항]</p>
-        <p style="color: #ddd; font-size: 0.95rem;">
-            1. 본인은 WBPC의 교육 공정, 내부 기밀, 지휘 시스템을 외부에 유출할 경우, **부정경쟁방지 및 영업비밀보호에 관한 법률**에 의거하여 즉각적인 **형사 고발**을 감수한다.<br><br>
-            2. 비밀 유출로 인해 발생한 회사의 유무형적 손실에 대하여, 본인은 **민사상 징벌적 손해배상** 책임을 지며, 회사의 모든 법적 비용을 전액 부담한다.<br><br>
-            3. 본인은 본인의 **위치 정보 및 명단 사진 데이터**가 법적 증거 자료로 보존됨에 동의하며, 어떠한 이의도 제기하지 않는다.<br><br>
-            4. 회사의 명예를 훼손하거나 내용을 변조하여 유포할 시 즉시 자격을 박탈하고 영구 퇴출 조치한다.
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 30px; border-radius: 15px; text-align: left; line-height: 1.9; border: 1px solid #1e3a5f;">
+        <h4 style="color: #00c3ff;">[ 위치 정보 기반 부정 접속 차단 ]</h4>
+        <p style="color: #ccc; font-size: 0.95rem;">
+            본 시스템은 보안 정책에 따라 **실시간 GPS 위치**를 확인합니다. 허가된 국가 및 지역을 벗어난 접속 시도는 즉시 차단되며, 사령관 지휘소에 경고 알림이 전송됩니다.
+        </p>
+
+        <h4 style="color: #00c3ff; margin-top: 25px;">[ 송출업체 제출 서류 대조 ]</h4>
+        <p style="color: #ccc; font-size: 0.95rem;">
+            귀하가 **현지 국가 송출업체(사무실)**에 제출한 여권 사본, 신원 명단 사진, 기본 인적 사항은 본 시스템의 데이터베이스와 실시간으로 연동되어 본인 확인 용도로 활용됩니다.
         </p>
     </div>
 
-    <div style="margin: 30px 0;">
-        <label style="color: #ff4444; font-weight: bold; cursor: pointer; font-size: 1.1rem;">
-            <input type="checkbox" id="nda-final-check" style="transform: scale(1.5); margin-right: 15px;"> 
-            나는 위 민·형사상 법적 책임을 충분히 이해하였으며 서약합니다.
-        </label>
+    <div style="margin-top: 35px;">
+        <button onclick="requestLocation()" style="width: 100%; padding: 20px; background: #00c3ff; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem;">
+            위치 정보 공유 및 행정 고지 확인
+        </button>
     </div>
-
-    <button onclick="nextStep(3)" style="padding: 18px 60px; background: #ff4444; color: #fff; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; font-size: 1.2rem; transition: 0.3s;">
-        서약서 최종 확인 및 다음 단계
-    </button>
 </div>
+
+<script>
+    function requestLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                alert("위치 좌표가 확인되었습니다. 사령관 지휘소에 보안 지역으로 등록됩니다.");
+                nextStep(4); // 마지막 4단계(최종 서명)로 이동
+            }, function(error) {
+                alert("보안을 위해 위치 정보 제공은 필수입니다. 설정을 확인해 주십시오.");
+            });
+        }
+    }
+</script>
