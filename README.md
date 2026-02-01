@@ -8,4 +8,4 @@ WBPC-KR는 외국인 근로자의 글로벌 현장 적응을 지원합니다.
 
 --- ![WBPC Logo](./file_00000000dd887206a7688fff6a7c00d5.png)
 Global-HR-System
-World Business Partner Center (WBPC)
+World Business Partner Center (WBPC).
