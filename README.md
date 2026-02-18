@@ -5,14 +5,7 @@
 
 ### 💎 Key Features
 * **AI Match-Making:** 17개국 근로자와 국내 수요처의 최적 매칭 알고리즘.
-* **Smart Care AI:** 엘레나(Elena) AI 가이드를 통한 실시간 언어 번역 및 서류 관리.
-* **Global Hub Design:** 세계지도를 기반으로 한 직관적인 하이테크 UI.
-
-### 🛠 Technology Stack
-* **Frontend:** HTML5, CSS3 (Minimalism & Gold/Navy Theme)
-* **Backend:** Python FastAPI (AI Engine)
-* **Intelligence:** WBPC Proprietary Elena AI
-* **Infrastructure:** Global Cloud Architecture (17-Country Edge Nodes)
+* **Smart Care AI:**  AI 가이드를 통한 실시간 언어 번역 및 서류 관리.
 
 ---
 © 2026 WBPC GLOBAL. All rights reserved.
